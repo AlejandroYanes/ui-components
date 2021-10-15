@@ -15,7 +15,7 @@ const wrapperMap = {
   ),
 };
 
-const NotificationCenter: FunctionComponent = () => {
+const NotificationHub: FunctionComponent = () => {
   const layout = useAppLayout();
   const [notifications, setNotifications] = useState<NotificationModel[]>([]);
 
@@ -54,4 +54,4 @@ const NotificationCenter: FunctionComponent = () => {
   );
 };
 
-export default NotificationCenter;
+export default NotificationHub;
