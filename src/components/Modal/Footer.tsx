@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { headerHeight } from 'styles/variables';
-import FlexBox from 'components/base-components/FlexBox';
+import FlexBox from 'components/FlexBox';
 
 interface Props {
   footer?: ReactNode;

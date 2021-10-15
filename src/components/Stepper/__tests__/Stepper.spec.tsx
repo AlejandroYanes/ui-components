@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
-import TestWrapper from 'components/base-components/TestWrapper';
-import { Text } from 'components/base-components/Typography';
+import TestWrapper from 'components/TestWrapper';
+import { Text } from 'components/Typography';
 import Stepper from '../index';
 
 const onChangeMock = jest.fn();

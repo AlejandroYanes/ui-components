@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { PositionProps } from 'helpers';
-import SvgIcon, { Icons } from 'components/base-components/SvgIcon';
+import SvgIcon, { Icons } from 'components/SvgIcon';
 import { StyledIconButton } from './styled';
 
 interface Props extends PositionProps {

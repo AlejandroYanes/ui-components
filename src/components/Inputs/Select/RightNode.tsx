@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Spring, Variants } from 'framer-motion';
-import SvgIcon from 'components/base-components/SvgIcon';
-import { SpinningDots } from 'components/base-components/Loaders';
+import SvgIcon from 'components/SvgIcon';
+import { SpinningDots } from 'components/Loaders';
 import AbsoluteContent from '../base/AbsoluteContent';
 import ClearButton from '../base/ClearButton';
 import { IconBox } from './styled';

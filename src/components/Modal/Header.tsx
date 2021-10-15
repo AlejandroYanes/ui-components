@@ -1,8 +1,8 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { mobileHeaderHeight } from 'styles/variables';
-import { Title } from 'components/base-components/Typography';
-import { IconButton } from 'components/base-components/Button';
-import FlexBox from 'components/base-components/FlexBox';
+import { Title } from 'components/Typography';
+import { IconButton } from 'components/Button';
+import FlexBox from 'components/FlexBox';
 import RenderIf from '../RenderIf';
 
 interface Props {

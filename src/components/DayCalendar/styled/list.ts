@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { anyPropsAttrs } from '../helpers';
+import { anyPropsAttrs } from 'helpers';
 
 export const List = styled.ul`
   list-style: none;

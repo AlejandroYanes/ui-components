@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { anyPropsAttrs } from 'helpers';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 import { borderSize, stepSize } from './constants';
 
 const guideStyles = {

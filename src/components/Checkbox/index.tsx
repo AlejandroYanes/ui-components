@@ -1,9 +1,9 @@
 import React, { FunctionComponent, ReactNode, useCallback } from 'react';
 import { PositionProps } from 'helpers';
 import { useUniqueIds } from 'hooks/UI';
-import { Text } from 'components/base-components/Typography';
-import FlexBox from 'components/base-components/FlexBox';
-import RenderIf from 'components/base-components/RenderIf';
+import { Text } from 'components/Typography';
+import FlexBox from 'components/FlexBox';
+import RenderIf from 'components/RenderIf';
 import Faux from './Faux';
 
 interface Props extends PositionProps {

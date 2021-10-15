@@ -7,8 +7,8 @@ import React, {
 } from 'react';
 import { AnimateSharedLayout } from 'framer-motion';
 import { PositionProps } from 'helpers';
-import RenderIf from 'components/base-components/RenderIf';
-import { IconButton } from 'components/base-components/Button';
+import RenderIf from 'components/RenderIf';
+import { IconButton } from 'components/Button';
 import Days from './Days';
 import { Edge, List, ListContainer, Wrapper } from './styled';
 

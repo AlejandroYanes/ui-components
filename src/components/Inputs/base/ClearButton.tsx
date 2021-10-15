@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { IconButton } from 'components/base-components/Button';
+import { IconButton } from 'components/Button';
 import AbsoluteContent from './AbsoluteContent';
 
 interface Props {

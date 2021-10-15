@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { PositionProps } from 'helpers';
-import { Text } from 'components/base-components/Typography';
+import { Text } from 'components/Typography';
 import {
   FauxContainer,
   FauxNob,

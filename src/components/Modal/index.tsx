@@ -1,5 +1,5 @@
 import React, { forwardRef, ReactNode } from 'react';
-import Backdrop from 'components/base-components/Backdrop';
+import Backdrop from 'components/Backdrop';
 import Header from './Header';
 import Footer from './Footer';
 import { Content, StyledModal } from './styled';

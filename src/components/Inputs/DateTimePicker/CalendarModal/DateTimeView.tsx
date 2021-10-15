@@ -1,12 +1,12 @@
 import React, { FunctionComponent, useState } from 'react';
 import { formatDateTime } from 'helpers';
-import FlexBox from 'components/base-components/FlexBox';
-import { Text } from 'components/base-components/Typography';
-import { Tab, Tabset } from 'components/base-components/Tabset';
-import RenderIf from 'components/base-components/RenderIf';
-import Calendar from 'components/base-components/Calendar';
-import Clock from 'components/base-components/Clock';
-import { Button } from 'components/base-components/Button';
+import FlexBox from 'components/FlexBox';
+import { Text } from 'components/Typography';
+import { Tab, Tabset } from 'components/Tabset';
+import RenderIf from 'components/RenderIf';
+import Calendar from 'components/Calendar';
+import Clock from 'components/Clock';
+import { Button } from 'components/Button';
 import { ClockWrapper, Footer } from './styled';
 import { ViewProps } from './type';
 

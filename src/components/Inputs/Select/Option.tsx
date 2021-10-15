@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import SvgIcon from 'components/base-components/SvgIcon';
-import RenderIf from 'components/base-components/RenderIf';
+import SvgIcon from 'components/SvgIcon';
+import RenderIf from 'components/RenderIf';
 import { OptionIcon, StyledOption } from './styled';
 import { SelectOption } from './index';
 

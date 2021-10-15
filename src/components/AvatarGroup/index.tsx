@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import React, { FunctionComponent, useMemo } from 'react';
 import { PositionProps } from 'helpers';
-import Avatar from 'components/base-components/Avatar';
-import RenderIf from 'components/base-components/RenderIf';
-import { Text } from 'components/base-components/Typography';
+import Avatar from 'components/Avatar';
+import RenderIf from 'components/RenderIf';
+import { Text } from 'components/Typography';
 import { StyledAvatarGroup } from './styled';
 
 interface Props extends PositionProps {

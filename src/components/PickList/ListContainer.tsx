@@ -5,9 +5,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { useAppLayout } from 'components/base-components/Configuration';
-import RenderIf from 'components/base-components/RenderIf';
-import { IconButton } from 'components/base-components/Button';
+import { useAppLayout } from 'components/Configuration';
+import RenderIf from 'components/RenderIf';
+import { IconButton } from 'components/Button';
 import { Edge, StyledListContainer, Wrapper } from './styled/list-container';
 import { StyledList } from './styled/list';
 import { PickListProps } from './PickList';

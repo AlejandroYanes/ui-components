@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Layout } from 'components/base-components/Configuration';
-import Clock from 'components/base-components/Clock';
-import FlexBox from 'components/base-components/FlexBox';
-import { Tab, Tabset } from 'components/base-components/Tabset';
-import RenderByLayout from 'components/base-components/RenderByLayout';
-import { Button } from 'components/base-components/Button';
+import { Layout } from 'components/Configuration';
+import Clock from 'components/Clock';
+import FlexBox from 'components/FlexBox';
+import { Tab, Tabset } from 'components/Tabset';
+import RenderByLayout from 'components/RenderByLayout';
+import { Button } from 'components/Button';
 import { Footer } from './styled';
 import { ViewProps } from './type';
 

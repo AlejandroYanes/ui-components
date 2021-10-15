@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { getPositionStyles } from 'helpers';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 
 const stepperStyles = {
   [Layout.DESKTOP]: css`

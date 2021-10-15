@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo } from 'react';
-import { Button, IconButton } from 'components/base-components/Button';
-import RenderIf from 'components/base-components/RenderIf';
+import { Button, IconButton } from 'components/Button';
+import RenderIf from 'components/RenderIf';
 import { monthFormatter, monthYearFormatter, yearFormatter } from './utils';
 import { DateElement } from './types';
 import { StyledHeader } from './styled/header';

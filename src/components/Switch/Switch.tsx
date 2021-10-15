@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { CaseProps } from 'components/base-components/Switch/Case';
+import { CaseProps } from 'components/Switch/Case';
 
 interface SwitchProps {
   by: any;

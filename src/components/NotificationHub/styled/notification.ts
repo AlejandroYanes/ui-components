@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { cardWidth } from 'styles/variables';
 import { getFontColor } from 'helpers';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 
 const widthMap = {
   [Layout.DESKTOP]: `width: calc(${cardWidth} / 1.6);`,

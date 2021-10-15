@@ -6,8 +6,8 @@ import {
   useRef,
   useState
 } from 'react';
-import RenderIf from 'components/base-components/RenderIf';
-import { SpinningDots } from 'components/base-components/Loaders';
+import RenderIf from 'components/RenderIf';
+import { SpinningDots } from 'components/Loaders';
 import Search from './Search';
 import Option from './Option';
 import { Edge, OptionsList, StyledOptionsTray } from './styled';

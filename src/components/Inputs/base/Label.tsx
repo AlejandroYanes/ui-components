@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import RenderIf from 'components/base-components/RenderIf';
+import RenderIf from 'components/RenderIf';
 import { StyledLabel } from './styled/label';
 
 interface Props {

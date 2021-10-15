@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import { formatDate, formatDateTime, formatTime } from 'helpers';
-import SvgIcon from 'components/base-components/SvgIcon';
-import RenderIf from 'components/base-components/RenderIf';
-import { Text } from 'components/base-components/Typography';
+import SvgIcon from 'components/SvgIcon';
+import RenderIf from 'components/RenderIf';
+import { Text } from 'components/Typography';
 import AbsoluteContent from '../base/AbsoluteContent';
 import { Separator, StyledContent } from './styled/content';
 import ClearButton from '../base/ClearButton';

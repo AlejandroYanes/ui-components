@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { mount } from 'enzyme';
-import TestWrapper from 'components/base-components/TestWrapper';
+import TestWrapper from 'components/TestWrapper';
 import Button from '../Button';
 
 const onClickMock = jest.fn();

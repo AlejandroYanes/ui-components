@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { checkValidationRules, FunctionRule, ValidationRule } from 'helpers';
 import { useDebounce } from 'hooks/UI';
-import { Input } from 'components/base-components/Inputs';
+import { Input } from 'components/Inputs';
 import FormContext from './context';
 
 interface Props {

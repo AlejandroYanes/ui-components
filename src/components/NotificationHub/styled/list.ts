@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ZLevels } from 'styles/z-levels';
 import { anyPropsAttrs } from 'helpers';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 
 const layoutMap = {
   [Layout.DESKTOP]: css`margin: 0 32px 0 0`,

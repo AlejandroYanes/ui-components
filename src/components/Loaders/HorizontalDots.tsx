@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { PositionProps } from 'helpers';
-import { useAppColors } from 'components/base-components/Configuration';
+import { useAppColors } from 'components/Configuration';
 import { Wrapper, Dot } from './styled/horizontal-dots';
 
 interface Props extends PositionProps {

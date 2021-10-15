@@ -60,6 +60,16 @@ export {
   getGrayLightColor,
   getGrayDarkColor,
   getGrayColor,
+  getInfoColor,
+  getInfoShadeColor,
+  getThemeBlackColor,
+  getWarningColor,
+  getWarningShadeColor,
+  getWhiteColor,
+  getSuccessColor,
+  anyPropsAttrs,
+  getColorVariation,
+  getEllipsisStyles,
 } from './styled-helpers';
 export { uniqueId } from './unique-id';
 export {

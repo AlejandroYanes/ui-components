@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Variations } from 'styles/colors';
 import { anyPropsAttrs, getColorVariation } from 'helpers';
-import SvgIcon from 'components/base-components/SvgIcon';
+import SvgIcon from 'components/SvgIcon';
 
 const getSizeStyles = (props) => {
   const { size } = props;

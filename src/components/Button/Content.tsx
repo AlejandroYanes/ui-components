@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import RenderIf from 'components/base-components/RenderIf';
-import { SpinningDots } from 'components/base-components/Loaders';
+import RenderIf from 'components/RenderIf';
+import { SpinningDots } from 'components/Loaders';
 import { LoadingLayer, Text } from './styled';
 import SvgIcon, { Icons } from '../SvgIcon';
 

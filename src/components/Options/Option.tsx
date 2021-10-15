@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useCallback } from 'react';
-import RenderIf from 'components/base-components/RenderIf';
-import { Icons } from 'components/base-components/SvgIcon';
-import { Text } from 'components/base-components/Typography';
+import RenderIf from 'components/RenderIf';
+import { Icons } from 'components/SvgIcon';
+import { Text } from 'components/Typography';
 import { useOptionsContext } from './context';
 import { Icon, Label, Mark, Option as StyledOption } from './styled';
 

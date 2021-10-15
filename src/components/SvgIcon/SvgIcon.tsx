@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Colors } from 'styles/colors';
-import { useAppColors } from 'components/base-components/Configuration';
+import { useAppColors } from 'components/Configuration';
 import { IconProps } from './icon-props';
 import { Icons, icons } from './Icons';
 import { svgIconStyles } from './styles';

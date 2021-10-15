@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, { FunctionComponent, useMemo } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { useAppColors } from 'components/base-components/Configuration';
+import { useAppColors } from 'components/Configuration';
 
 interface Props {
   isChecked: boolean;

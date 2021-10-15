@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { anyPropsAttrs, getBgdColor } from 'helpers';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 
 export const MenuWrapper = styled.div`
   display: flex;

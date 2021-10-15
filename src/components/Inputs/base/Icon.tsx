@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import SvgIcon, { Icons } from 'components/base-components/SvgIcon';
-import RenderIf from 'components/base-components/RenderIf';
+import SvgIcon, { Icons } from 'components/SvgIcon';
+import RenderIf from 'components/RenderIf';
 import AbsoluteContent from './AbsoluteContent';
 
 interface Props {

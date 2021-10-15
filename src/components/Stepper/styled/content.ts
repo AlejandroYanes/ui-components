@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Layout } from 'components/base-components/Configuration';
+import { Layout } from 'components/Configuration';
 
 const contentStyles = {
   [Layout.DESKTOP]: css`

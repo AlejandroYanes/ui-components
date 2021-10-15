@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Calendar from 'components/base-components/Calendar';
+import Calendar from 'components/Calendar';
 import { ViewProps } from './type';
 
 interface Props extends ViewProps {

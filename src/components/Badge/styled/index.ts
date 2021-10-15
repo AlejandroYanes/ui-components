@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { Variations } from 'styles/colors';
 import { elementHeight } from 'styles/variables';
 import { getColorVariation, getEllipsisStyles, getPositionStyles } from 'helpers';
-import SvgIcon from 'components/base-components/SvgIcon';
+import SvgIcon from 'components/SvgIcon';
 
 function resolveFontColor(props) {
   const { color, theme: { colors } } = props;

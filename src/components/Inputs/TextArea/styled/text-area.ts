@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { getPositionStyles, PositionProps } from 'helpers';
-import { getColorStyles } from 'components/base-components/Inputs/Input/styled/input';
+import { getColorStyles } from 'components/Inputs/Input/styled/input';
 
 export const StyledContainer = styled.div.attrs((props: PositionProps) => props)`
   ${getPositionStyles};

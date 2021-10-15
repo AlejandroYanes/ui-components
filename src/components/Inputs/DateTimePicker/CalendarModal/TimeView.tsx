@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
-import Clock from 'components/base-components/Clock';
-import { Button } from 'components/base-components/Button';
+import Clock from 'components/Clock';
+import { Button } from 'components/Button';
 import { Footer } from './styled';
 import { ViewProps } from './type';
 

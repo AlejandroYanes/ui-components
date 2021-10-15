@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Button } from 'components/base-components/Button';
+import { Button } from 'components/Button';
 import { getBgdLighterColor } from 'helpers';
 
 export const StyledList = styled.div`

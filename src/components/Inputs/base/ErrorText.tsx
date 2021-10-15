@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import RenderIf from 'components/base-components/RenderIf';
+import RenderIf from 'components/RenderIf';
 import { ErrorWrapper, StyledErrorText } from './styled/error-text';
 
 interface Props {

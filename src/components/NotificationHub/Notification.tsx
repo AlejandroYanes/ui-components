@@ -4,10 +4,10 @@ import {
   NotificationModel,
   NotificationType,
 } from 'notifications';
-import { useAppColors } from 'components/base-components/Configuration';
-import { IconButton } from 'components/base-components/Button';
-import { Text } from 'components/base-components/Typography';
-import RenderIf from 'components/base-components/RenderIf';
+import { useAppColors } from 'components/Configuration';
+import { IconButton } from 'components/Button';
+import { Text } from 'components/Typography';
+import RenderIf from 'components/RenderIf';
 import Icon from './Icon';
 import { Content, Notification as StyledNotification } from './styled/notification';
 

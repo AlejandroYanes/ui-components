@@ -8,8 +8,8 @@ import {
   startOfWeek,
 } from 'date-fns';
 import { generateUID } from 'helpers';
-import { Icons } from 'components/base-components/SvgIcon';
-import { Button } from 'components/base-components/Button';
+import { Icons } from 'components/SvgIcon';
+import { Button } from 'components/Button';
 import { Options as StyledOptions } from './styled';
 
 const today = new Date();

@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Layout } from 'components/base-components/Configuration';
-import FlexBox from 'components/base-components/FlexBox';
-import RenderIf from 'components/base-components/RenderIf';
-import Calendar from 'components/base-components/Calendar';
-import RenderByLayout from 'components/base-components/RenderByLayout';
-import { Button } from 'components/base-components/Button';
+import { Layout } from 'components/Configuration';
+import FlexBox from 'components/FlexBox';
+import RenderIf from 'components/RenderIf';
+import Calendar from 'components/Calendar';
+import RenderByLayout from 'components/RenderByLayout';
+import { Button } from 'components/Button';
 import Options from './Options';
 import { Footer } from './styled';
 import { ViewProps } from './type';

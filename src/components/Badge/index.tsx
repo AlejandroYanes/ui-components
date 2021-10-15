@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { PositionProps } from 'helpers';
-import { Icons } from 'components/base-components/SvgIcon';
-import RenderIf from 'components/base-components/RenderIf';
+import { Icons } from 'components/SvgIcon';
+import RenderIf from 'components/RenderIf';
 import { Icon, StyledBadge } from './styled';
 
 export interface BadgeProps extends PositionProps {

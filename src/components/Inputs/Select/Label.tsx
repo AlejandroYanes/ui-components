@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Text } from 'components/base-components/Typography';
+import { Text } from 'components/Typography';
 import { SelectOption } from './';
 
 interface Props {

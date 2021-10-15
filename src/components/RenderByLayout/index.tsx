@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { useAppLayout } from 'components/base-components/Configuration';
+import { useAppLayout } from 'components/Configuration';
 import RenderByMap from '../RenderByMap';
 
 interface Props {

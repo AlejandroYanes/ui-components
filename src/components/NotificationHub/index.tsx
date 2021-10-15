@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { EventChannelList, useEventCenterUpdate } from 'event-center';
 import { NotificationModel } from 'notifications';
-import { Layout, useAppLayout } from 'components/base-components/Configuration';
+import { Layout, useAppLayout } from 'components/Configuration';
 import Notification from './Notification';
 import { Notifications } from './styled/list';
 

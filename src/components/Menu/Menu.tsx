@@ -6,9 +6,9 @@ import {
   useRef,
   useState,
 } from 'react';
-import { useAppLayout } from 'components/base-components/Configuration';
-import RenderIf from 'components/base-components/RenderIf';
-import Backdrop from 'components/base-components/Backdrop';
+import { useAppLayout } from 'components/Configuration';
+import RenderIf from 'components/RenderIf';
+import Backdrop from 'components/Backdrop';
 import { MenuWrapper, TriggerContainer, MenuList } from './styled/menu';
 import { MenuProvider } from './context';
 

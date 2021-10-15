@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Text } from 'components/base-components/Typography';
+import { Text } from 'components/Typography';
 import ClearButton from '../base/ClearButton';
 import AbsoluteContent from '../base/AbsoluteContent';
 

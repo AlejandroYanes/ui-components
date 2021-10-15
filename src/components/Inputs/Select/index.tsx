@@ -9,8 +9,8 @@ import {
 } from 'react';
 import { getEventValue } from 'helpers';
 import { useHoverState } from 'hooks/UI';
-import FlexBox from 'components/base-components/FlexBox';
-import RenderIf from 'components/base-components/RenderIf';
+import FlexBox from 'components/FlexBox';
+import RenderIf from 'components/RenderIf';
 import { InputProps } from '../types';
 import InputLabel from '../base/Label';
 import InputIcon from '../base/Icon';

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Backdrop from 'components/base-components/Backdrop';
+import Backdrop from 'components/Backdrop';
 import DateView from './DateView';
 import DateRangeView from './DateRangeView';
 import DateTimeView from './DateTimeView';

@@ -7,7 +7,7 @@ import {
   setYear,
   subMonths,
 } from 'date-fns';
-import RenderIf from 'components/base-components/RenderIf';
+import RenderIf from 'components/RenderIf';
 import { StyledCalendar } from './styled/calendar';
 import Header from './Header';
 import Days from './Days';

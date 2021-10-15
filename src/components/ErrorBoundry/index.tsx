@@ -1,6 +1,6 @@
 import React, { Component, ReactNode } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Title } from 'components/base-components/Typography';
+import { Title } from 'components/Typography';
 import { ErrorBoundary as StyledErrorBoundary } from './styled';
 
 interface Props {

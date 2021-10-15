@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import { getEventValue } from 'helpers';
-import { IconButton } from 'components/base-components/Button';
+import { IconButton } from 'components/Button';
 import AbsoluteContent from '../base/AbsoluteContent';
 import InputLabel from '../base/Label';
 import InputIcon from '../base/Icon';
