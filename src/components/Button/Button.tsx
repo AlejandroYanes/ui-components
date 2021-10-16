@@ -41,6 +41,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
 
   return (
     <StyledButton
+      data-testid="button"
       onClick={handleOnClick}
       disabled={disabled}
       variant={variant}

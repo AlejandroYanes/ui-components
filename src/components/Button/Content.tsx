@@ -36,7 +36,7 @@ const Content: FunctionComponent<Props> = (props) => {
         <Text data-el="button-label" show={!loading}>{label}</Text>
         <SvgIcon icon={rightIcon} height={sm ? 14 : 20} width={sm ? 14 : 20} />
         <RenderIf condition={loading}>
-          <LoadingLayer show={loading}>
+          <LoadingLayer data-testid="button-loading" show={loading}>
             <SpinningDots size="x-small" color={spinnerColors as any} />
           </LoadingLayer>
         </RenderIf>

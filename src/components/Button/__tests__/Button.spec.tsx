@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import TestWrapper from 'components/TestWrapper';
 import Button from '../Button';
 
@@ -10,8 +10,8 @@ describe('Button component', () => {
     onClickMock.mockClear();
   });
 
-  it('should show the label and call the passed onClick function when clicked', () => {
-    const component = mount(
+  it('should show the label and call the passed onClick function when clicked', async () => {
+    const { findByTestId } = render(
       <TestWrapper
         component={Button}
         label="test"
@@ -19,14 +19,15 @@ describe('Button component', () => {
       />
     );
 
-    component.find('button').simulate('click');
+    const button = await findByTestId('button');
+    fireEvent.click(button);
 
-    expect(component.find('span[data-el="button-label"]').text()).toBe('test');
+    expect(button).toHaveTextContent('test')
     expect(onClickMock).toHaveBeenCalled();
   });
 
-  it('should show a loader and not call the passed onClick function when clicked if loading', () => {
-    const component = mount(
+  it('should show a loader and not call the passed onClick function when clicked if loading', async () => {
+    const { findByTestId } = render(
       <TestWrapper
         component={Button}
         onClick={onClickMock}
@@ -34,15 +35,16 @@ describe('Button component', () => {
         loading
       />
     );
+    const button = await findByTestId('button');
+    const loadingLayer = await findByTestId('button-loading');
+    fireEvent.click(button);
 
-    component.find('button').simulate('click');
-
-    expect(component.find('div[data-el="loader-spinning-dots"]').exists()).toBe(true);
+    expect(loadingLayer).toBeInTheDocument();
     expect(onClickMock).not.toHaveBeenCalled();
   });
 
-  it('should not call the passed onClick function when clicked if disabled', () => {
-    const component = mount(
+  it('should not call the passed onClick function when clicked if disabled', async () => {
+    const { findByTestId, queryByTestId } = render(
       <TestWrapper
         component={Button}
         onClick={onClickMock}
@@ -51,9 +53,11 @@ describe('Button component', () => {
       />
     );
 
-    component.find('button').simulate('click');
+    const button = await findByTestId('button');
+    const loadingLayer = await queryByTestId('button-loading');
+    fireEvent.click(button);
 
-    expect(component.find('div[data-el="loader-spinning-dots"]').exists()).toBe(false);
+    expect(loadingLayer).not.toBeInTheDocument();
     expect(onClickMock).not.toHaveBeenCalled();
   });
 });
