@@ -23,7 +23,7 @@ const Stepper: FunctionComponent<Props> = (props) => {
           onChange={onChange}
         />
       </StepsContainer>
-      <Content data-el="stepper-content">
+      <Content data-el="stepper-content" data-testid="stepper-content">
         {step}
       </Content>
     </StyledStepper>

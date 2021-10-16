@@ -26,6 +26,7 @@ const Step: FunctionComponent<Props> = (props) => {
       </RenderIf>
       <Container
         data-el={`stepper-step-${value}`}
+        data-testid={`stepper-step-${value}`}
         readOnly={!onClick}
         isActive={isActive}
         onClick={handleOnClick}
