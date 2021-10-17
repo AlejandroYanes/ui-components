@@ -53,15 +53,15 @@ const getItalicStyle = (props) => {
 };
 
 const weightMap = {
-  'normal': css`font-family: Roboto-Regular, sans-serif;`,
-  'light': css`font-family: Roboto-Thin, sans-serif; font-weight: lighter;`,
-  'bold': css`font-family: Roboto-Bold, sans-serif; font-weight: bold;`,
+  light: 200,
+  normal: 400,
+  bold: 700,
 };
 
 export const Text = styled.span.attrs(anyPropsAttrs)`
   white-space: normal;
   box-sizing: border-box;
-  ${({ weight }) => weightMap[weight]};
+  font-weight: ${({ weight }) => weightMap[weight]};
   font-size: ${({ size }) => sizeMap[size]};
   text-align: ${({ align }) => align};
   ${getItalicStyle};

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { ThemeProvider, useTheme } from 'styled-components';
-import { ColorScheme, Palette } from 'styles/colors';
+import { basicColors, ColorScheme, Palette } from 'styles/colors';
 import { composeColorScheme } from 'helpers';
 import useLayout from './use-layout';
 import { Layout } from './types';
@@ -21,7 +21,7 @@ const Configuration: FunctionComponent<Props> = (props) => {
   const layout = useLayout();
 
   const theme = {
-    colors: composeColorScheme(palette),
+    colors: composeColorScheme({ ...basicColors ,...palette }),
     layout,
   };
 

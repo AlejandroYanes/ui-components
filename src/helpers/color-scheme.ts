@@ -11,8 +11,8 @@ import {
   darkStyleColors,
   fixedColors,
   lightStyleColors,
-} from '../styles/colors';
-import { colorVariation } from '../styles/variables';
+} from 'styles/colors';
+import { colorVariation } from 'styles/variables';
 
 function getColorFactor(color: string) {
   return getBrightness(color) > 128

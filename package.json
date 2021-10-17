@@ -1,7 +1,7 @@
 {
   "name": "activate-components",
-  "version": "0.0.5",
-  "description": "base components for hte Activate project",
+  "version": "0.0.11",
+  "description": "base components for the Activate project",
   "author": "ayanes",
   "license": "MIT",
   "keywords": [
@@ -32,7 +32,8 @@
     "lint:fix": "eslint --ext=jsx,ts,tsx 'src/**/*.{ts,tsx}' --fix",
     "test": "jest",
     "test:all": "jest --watchAll=false",
-    "test:ci": "jest --watchAll=false --ci --coverage --reporters=default --reporters=jest-junit --coverageReporters=cobertura"
+    "test:ci": "jest --watchAll=false --ci --coverage --reporters=default --reporters=jest-junit --coverageReporters=cobertura",
+    "pck:publish": "npm run build && npm publish"
   },
   "peerDependencies": {
     "react": "^17.0.2",

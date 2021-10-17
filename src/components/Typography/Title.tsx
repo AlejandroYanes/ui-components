@@ -9,6 +9,7 @@ interface Props extends PositionProps {
   weight?: 'light' | 'normal' | 'bold';
   size?: number;
   lineHeight?: number;
+  italic?: boolean;
   inline?: boolean;
 }
 

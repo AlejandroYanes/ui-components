@@ -3,11 +3,11 @@ import { getShade } from 'helpers/color-attrs';
 export type Palette = {
   BRAND: string;
   ACCENT: string;
-  SUCCESS: string;
-  INFO: string;
-  WARNING: string;
-  ERROR: string;
   BACKGROUND: string;
+  SUCCESS?: string;
+  INFO?: string;
+  WARNING?: string;
+  ERROR?: string;
 }
 
 export type BasicScheme = Exclude<Palette, { FONT: string }>;

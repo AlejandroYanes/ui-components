@@ -8,9 +8,9 @@ const sizeMap = {
 };
 
 const weightMap = {
-  'normal': css`font-family: Bitter-Regular, serif; font-weight: normal;`,
-  'light': css`font-family: Bitter-ExtraLight, serif; font-weight: lighter`,
-  'bold': css`font-family: Bitter-ExtraBold, serif; font-weight: bolder;`,
+  light: 200,
+  normal: 400,
+  bold: 700,
 };
 
 const getTextStyles = (props) => {
@@ -19,7 +19,7 @@ const getTextStyles = (props) => {
   return css`
     font-size: ${size ? `${size}px` : sizeMap[level]};
     text-align: ${align};
-    ${weightMap[weight]};
+    font-weight: ${weightMap[weight]};
     ${lineHeight ? `line-height: ${lineHeight}px` : ''};
     ${inline ? 'display: inline;' : ''};
   `;
@@ -45,11 +45,22 @@ const getColor = (props) => {
   return `color: ${fontColor}`;
 };
 
+const getItalicStyle = (props) => {
+  const { italic } = props;
+
+  if (italic) {
+    return css`font-style: italic`;
+  }
+
+  return '';
+};
+
 
 export const Heading = styled.h1.attrs(anyPropsAttrs)`
   white-space: normal;
   ${getTextStyles};
   ${getColor};
+  ${getItalicStyle};
   ${getEllipsisStyles};
   ${getPositionStyles};
 `;
