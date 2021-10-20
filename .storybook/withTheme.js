@@ -1,0 +1,42 @@
+import {
+  FruitsTheme,
+  GrapesTheme,
+  LifeIsABeachTheme,
+  DuskLightsTheme,
+  NeonLightsTheme,
+  SummerVibesTheme,
+} from '../src/styles/themes';
+import { basicColors, Configuration } from '../src';
+
+const themes = {
+  'fruits': FruitsTheme,
+  'grapes': GrapesTheme,
+  'beach': LifeIsABeachTheme,
+  'dusk': DuskLightsTheme,
+  'neon': NeonLightsTheme,
+  'summer': SummerVibesTheme,
+}
+
+
+const getPalette = (themeName, background) => {
+  const bgColor = !!background && background !== 'transparent'
+    ? background
+    : '#ffffff';
+  return {
+    ...basicColors,
+    ...themes[themeName],
+    BACKGROUND: bgColor,
+  };
+}
+
+export const withThemeProvider = (Story, context) => {
+  const { globals: { theme, backgrounds } } = context;
+  console.log(context.globals);
+  const palette = getPalette(theme, backgrounds?.value);
+
+  return (
+    <Configuration palette={palette}>
+      <Story {...context} />
+    </Configuration>
+  )
+}

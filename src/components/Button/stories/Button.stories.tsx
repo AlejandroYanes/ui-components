@@ -1,25 +1,14 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
-import { basicColors, Palette } from 'styles';
 import { Button } from 'components/Button';
-import Configuration from 'components/Configuration';
 
 const meta = {
   title: 'Example/Button',
   component: Button,
 } as Meta;
 
-const palette: Palette = {
-  BRAND: '#d2463b',
-  ACCENT: '#017f97',
-  BACKGROUND: '#ffffff',
-  ...basicColors,
-};
-
 export const Brand: ComponentStory<typeof Button> = (args) => (
-  <Configuration palette={palette}>
-    <Button variant="fill" color="brand" label="Button" {...args} />
-  </Configuration>
+  <Button variant="fill" color="brand" label="Button" {...args} />
 );
 
 // const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
