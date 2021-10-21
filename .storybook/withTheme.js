@@ -31,7 +31,6 @@ const getPalette = (themeName, background) => {
 
 export const withThemeProvider = (Story, context) => {
   const { globals: { theme, backgrounds } } = context;
-  console.log(context.globals);
   const palette = getPalette(theme, backgrounds?.value);
 
   return (

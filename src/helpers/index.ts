@@ -2,7 +2,6 @@ export { arePropsEqual } from './are-props-equal';
 export {
   composeColorScheme,
   balanceColorRatio,
-  balanceBgColorRatio,
 } from './color-scheme';
 export {
   getLuminance,
@@ -10,6 +9,9 @@ export {
   getShade,
   changeColorLight,
   getBrightness,
+  changeColorSat,
+  getColorLight,
+  getColorSat,
 } from './color-attrs';
 export { PositionProps } from './common-props';
 export {

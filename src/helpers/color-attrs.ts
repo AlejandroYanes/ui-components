@@ -42,10 +42,26 @@ export function getShade(hexColor: string, alpha = 0.1): string {
   return `rgba(${rgbString}, ${alpha})`;
 }
 
+export function getColorLight(hexColor: string): number {
+  return rgbToHsl(hexToRgb(hexColor))[2];
+}
+
 export function changeColorLight(hexColor: string, amount: number): string {
   const [hue, sat, light] = rgbToHsl(hexToRgb(hexColor));
   const nextLight = light + (amount * 100);
   const changedColor = [hue, sat, Math.max(0, Math.min(100, nextLight))];
+
+  return rgbToHex(hslToRgb(changedColor));
+}
+
+export function getColorSat(hexColor: string): number {
+  return rgbToHsl(hexToRgb(hexColor))[1];
+}
+
+export function changeColorSat(hexColor: string, amount: number): string {
+  const [hue, sat, light] = rgbToHsl(hexToRgb(hexColor));
+  const nextSat = sat + (amount * 100);
+  const changedColor = [hue, Math.max(0, Math.min(100, nextSat)), light];
 
   return rgbToHex(hslToRgb(changedColor));
 }

@@ -7,33 +7,20 @@ const meta = {
   component: Button,
 } as Meta;
 
-export const Brand: ComponentStory<typeof Button> = (args) => (
-  <Button variant="fill" color="brand" label="Button" {...args} />
+export const Fill: ComponentStory<typeof Button> = (args) => (
+  <Button variant="fill" color="warning" label="Brand Button" {...args} />
 );
 
-// const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-//
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   primary: true,
-//   label: 'Button',
-// };
+export const Outline: ComponentStory<typeof Button> = (args) => (
+  <Button variant="outline" color="accent" label="Outline Button" {...args} />
+);
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+export const Flat: ComponentStory<typeof Button> = (args) => (
+  <Button variant="flat" color="success" label="Flat Button" {...args} />
+);
+
+export const Text: ComponentStory<typeof Button> = (args) => (
+  <Button variant="text" color="info" label="Text Button" {...args} />
+);
 
 export default meta;
