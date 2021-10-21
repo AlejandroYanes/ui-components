@@ -13,6 +13,7 @@ import {
   lightStyleColors,
 } from 'styles/colors';
 import { colorVariation } from 'styles/variables';
+import { getColorLight } from './color-attrs';
 
 function getColorFactor(color: string) {
   return getBrightness(color) > 128
@@ -25,30 +26,19 @@ export function balanceColorRatio(
   background: string,
   targetRatio = 5,
 ): string {
-  const colorChangeFactor = getColorFactor(background);
+  let colorFactor = getColorFactor(background);
+  let ratio = getContrastRatio(color, background);
   let balancedColor = color;
-  let ratio = getContrastRatio(balancedColor, background);
 
   while (ratio < targetRatio) {
-    balancedColor = changeColorLight(balancedColor, colorChangeFactor);
+    balancedColor = changeColorLight(color, colorFactor);
+
+    if (getColorLight(balancedColor) === 100 || getColorLight(balancedColor) === 0) {
+      break;
+    }
+
     ratio = getContrastRatio(balancedColor, background);
-  }
-
-  return balancedColor;
-}
-
-export function balanceBgColorRatio(
-  color: string,
-  background: string,
-  targetRatio = 4.5,
-): string {
-  const colorChangeFactor = getColorFactor(color);
-  let balancedColor = background;
-  let ratio = getContrastRatio(color, balancedColor);
-
-  while (ratio < targetRatio) {
-    balancedColor = changeColorLight(balancedColor, colorChangeFactor);
-    ratio = getContrastRatio(color, balancedColor);
+    colorFactor += colorFactor;
   }
 
   return balancedColor;
@@ -62,7 +52,7 @@ function expandColors(colors: Palette, useDarkStyle) {
     const colorFactor = useDarkStyle ? colorVariation : -colorVariation;
     const balancedColor = balanceColorRatio(colorValue, BACKGROUND);
     const balancedBgColor = useDarkStyle
-      ? balanceBgColorRatio(BACKGROUND, colorValue, 5.5)
+      ? balanceColorRatio(colorValue, BACKGROUND, 3.2)
       : colorValue;
 
     return {
