@@ -36,6 +36,7 @@
     "pck:publish": "npm run build && npm publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "build-storybook:static": "npm run build-storybook -- -o ./dist",
     "chromatic": "npx chromatic --project-token=0a8080853ad0"
   },
   "peerDependencies": {
