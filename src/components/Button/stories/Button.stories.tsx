@@ -8,7 +8,7 @@ const meta = {
 } as Meta;
 
 export const Fill: ComponentStory<typeof Button> = (args) => (
-  <Button variant="fill" color="warning" label="Brand Button" {...args} />
+  <Button variant="fill" color="brand" label="Brand Button" {...args} />
 );
 
 export const Outline: ComponentStory<typeof Button> = (args) => (

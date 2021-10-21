@@ -49,11 +49,11 @@ function expandColors(colors: Palette, useDarkStyle) {
 
   return Object.keys(rest).reduce((acc, color) => {
     const colorValue = colors[color];
-    const colorFactor = useDarkStyle ? colorVariation : -colorVariation;
-    const balancedColor = balanceColorRatio(colorValue, BACKGROUND);
+    const balancedColor = balanceColorRatio(colorValue, BACKGROUND, 5);
     const balancedBgColor = useDarkStyle
-      ? balanceColorRatio(colorValue, BACKGROUND, 3.2)
+      ? balanceColorRatio(colorValue, BACKGROUND, 3.7)
       : colorValue;
+    const colorFactor = useDarkStyle ? colorVariation : -colorVariation;
 
     return {
       ...acc,
