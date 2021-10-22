@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - uses: actions/checkout@v1
+      # 👇 Version 2 of the action
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
       - name: Install dependencies
         run: npm i
         # 👇 Adds Chromatic as a step in the workflow
@@ -24,3 +28,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitZeroOnChanges: true # 👈 Option to prevent the workflow from failing
