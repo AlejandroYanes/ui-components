@@ -39,14 +39,12 @@ function resolveButtonStyles(props) {
         height: 28px;
         border-radius: 100px;
         padding: 0 18px;
-        font-family: Roboto-Bold, sans-serif;
       `
       : css`
         min-width: ${elementHeight};
         height: ${elementHeight};
         border-radius: 100px;
         padding: 0 18px;
-        font-family: Roboto-Bold, sans-serif;
       `;
   }
 
@@ -59,6 +57,7 @@ export const StyledBadge = styled.div.attrs((props: any) => props)`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   font-size: ${resolveSize};
   color: ${resolveFontColor};
   background-color: ${resolveBackgroundColor};

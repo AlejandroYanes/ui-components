@@ -11,6 +11,7 @@ export const StyledDays = styled.table`
 export const StyledWeekDay = styled.th`
   font-size: 16px;
   font-weight: lighter;
+  color: ${getFontColor};
 `;
 
 export const StyledDay = styled.td`
