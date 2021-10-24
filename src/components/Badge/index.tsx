@@ -27,9 +27,9 @@ const Badge: FunctionComponent<BadgeProps> = (props) => {
       <StyledBadge color={color} sm={sm} {...rest}>
         <RenderIf condition={!children} fallback={children}>
           <Icon
-            size={sm ? 'small' : 'medium'}
             icon={icon}
-            color={color === 'light' ? 'FONT' : 'WHITE'}
+            size={sm ? 'small' : 'medium'}
+            color={color === 'light' ? 'FONT' : color.toUpperCase()}
           />
           <label>{label}</label>
         </RenderIf>
