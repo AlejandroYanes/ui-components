@@ -18,19 +18,6 @@ import ErrorBoundary from './components/ErrorBoundry';
 import FlexBox from './components/FlexBox';
 import { Form, Field } from './components/Form';
 import {
-  ManHoldingBubble,
-  ManInSearch,
-  ManLooking,
-  ManLookingDown,
-  ManLookingLaptop,
-  ManWriting,
-  ManWithCheckList,
-  PhoneWithContent,
-  PhoneWithWoman,
-  NoFriends,
-  FriendsTalking,
-} from './components/Illustrations';
-import {
   Input,
   NumberInput,
   PasswordInput,
@@ -201,17 +188,6 @@ export {
   FlexBox,
   Form,
   Field,
-  ManHoldingBubble,
-  ManInSearch,
-  ManLooking,
-  ManLookingDown,
-  ManLookingLaptop,
-  ManWriting,
-  ManWithCheckList,
-  PhoneWithContent,
-  PhoneWithWoman,
-  NoFriends,
-  FriendsTalking,
   Input,
   NumberInput,
   PasswordInput,
