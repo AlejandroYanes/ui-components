@@ -1,8 +1,8 @@
 import React, { createContext, FunctionComponent, useContext, useMemo } from 'react';
 
 interface OptionsContext {
-  value: string;
-  onChange: (value) => void;
+  value: any;
+  onChange: (value: any) => void;
   size?: 'small' | 'medium' | 'large';
   color?: 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error';
   fullWidth?: boolean;

@@ -9,7 +9,7 @@ import {
 import RenderIf from 'components/RenderIf';
 import { SpinningDots } from 'components/Loaders';
 import Search from './Search';
-import Option from './Option';
+import OptionItem from './OptionItem';
 import { Edge, OptionsList, StyledOptionsTray } from './styled';
 import getFloatingStyles from './get-floating-styles';
 import { SelectOption } from './';
@@ -53,7 +53,7 @@ const OptionsTray: FunctionComponent<Props> = (props) => {
         :option.value === value?.value;
 
       return (
-        <Option
+        <OptionItem
           key={option.value}
           option={option}
           isSelected={isSelected}

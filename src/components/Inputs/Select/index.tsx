@@ -20,7 +20,7 @@ import Label from './Label';
 import { Content, TrayContainer } from './styled';
 
 export interface SelectOption {
-  value: string;
+  value: string | number;
   label: string | ReactNode;
   [x: string]: any;
 }

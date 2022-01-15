@@ -6,7 +6,7 @@ import { useOptionsContext } from './context';
 import { Icon, Label, Mark, Option as StyledOption } from './styled';
 
 interface Props {
-  value: string;
+  value: any;
   label: string;
   icon?: Icons;
 }

@@ -5,8 +5,8 @@ import { OptionsProvider } from './context';
 import { Options as StyledOptions } from './styled';
 
 interface Props extends PositionProps {
-  value: string;
-  onChange: (value) => void;
+  value: any;
+  onChange: (value: any) => void;
   size?: 'small' | 'medium' | 'large';
   color?: 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error';
 }

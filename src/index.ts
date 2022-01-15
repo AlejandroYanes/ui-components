@@ -193,7 +193,6 @@ export {
   PasswordInput,
   DateTimePicker,
   Select,
-  SelectOption,
   TextArea,
   ErrorText,
   Concentric,
@@ -332,3 +331,5 @@ export {
   colorVariation,
   ZLevels,
 };
+
+export type { SelectOption };

@@ -35,3 +35,4 @@ yarn.lock
 #storybook
 dist/
 build-storybook.log
+storybook-static/

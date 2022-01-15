@@ -10,7 +10,7 @@ interface Props {
   onClick: (event) => void;
 }
 
-const Option: FunctionComponent<Props> = (props) => {
+const OptionItem: FunctionComponent<Props> = (props) => {
   const { isSelected, option, onClick } = props;
 
   const handleOnClick = () => onClick(option);
@@ -31,4 +31,4 @@ const Option: FunctionComponent<Props> = (props) => {
   );
 };
 
-export default Option;
+export default OptionItem;
