@@ -1,26 +1,29 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
-import { Button } from 'components/Button';
+import { Button as ButtonComp } from 'components/Button';
 
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/Button/Button',
+  component: ButtonComp,
+  parameters: {
+    controls: { expanded: true },
+  },
+  argTypes: {
+    onClick: {
+      control: 'none',
+    },
+  },
 } as Meta;
 
-export const Fill: ComponentStory<typeof Button> = (args) => (
-  <Button variant="fill" color="brand" label="Brand Button" {...args} />
+export const Button: ComponentStory<typeof ButtonComp> = (args) => (
+  <ButtonComp {...args} />
 );
 
-export const Outline: ComponentStory<typeof Button> = (args) => (
-  <Button variant="outline" color="accent" label="Outline Button" {...args} />
-);
-
-export const Flat: ComponentStory<typeof Button> = (args) => (
-  <Button variant="flat" color="success" label="Flat Button" {...args} />
-);
-
-export const Text: ComponentStory<typeof Button> = (args) => (
-  <Button variant="text" color="info" label="Text Button" {...args} />
-);
+Button.args = {
+  label: 'Test Button',
+  variant: 'fill',
+  color: 'brand',
+  type: 'button',
+};
 
 export default meta;

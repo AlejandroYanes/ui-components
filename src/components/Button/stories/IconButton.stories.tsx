@@ -1,26 +1,28 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
-import { IconButton } from 'components/Button';
+import { IconButton as IconButtonComp } from 'components/Button';
 
 const meta = {
-  title: 'Example/IconButton',
-  component: IconButton,
+  title: 'Example/Button/IconButton',
+  component: IconButtonComp,
+  parameters: {
+    controls: { expanded: true },
+  },
+  argTypes: {
+    onClick: {
+      control: 'none',
+    },
+  },
 } as Meta;
 
-export const Fill: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton variant="fill" color="brand" icon="HEART_FILLED" {...args} />
+export const IconButton: ComponentStory<typeof IconButtonComp> = (args) => (
+  <IconButtonComp {...args} />
 );
 
-export const Outline: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton variant="outline" color="info" icon="SEARCH" size="x-large" {...args} />
-);
-
-export const Flat: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton variant="flat" color="success" icon="BOOKMARK" size="large" {...args} />
-);
-
-export const Text: ComponentStory<typeof IconButton> = (args) => (
-  <IconButton variant="text" color="info" icon="BELL" {...args} />
-);
+IconButton.args = {
+  color: 'brand',
+  variant: 'fill',
+  icon: 'BELL',
+};
 
 export default meta;

@@ -21,7 +21,6 @@ const getHeightStyles = (props) => {
 };
 
 export const StyledLink = styled(Link)`
-  font-family: Roboto-Bold, sans-serif;
   text-decoration: none;
   border: none;
   outline: none;
