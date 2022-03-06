@@ -75,7 +75,7 @@ const App = ({ children }) => {
 
 ### Fonts
 
-The `Title`, `Text` and `Paragraph` component do not define a `font-family`,
+The `Title`, `Text`, `Paragraph` and `Button` components do not define a `font-family`,
 so you can define it in a global style file, this allows for more customization
 when deciding over your typography, in our case we are doing it like
 
