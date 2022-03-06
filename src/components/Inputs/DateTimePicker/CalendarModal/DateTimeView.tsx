@@ -49,7 +49,7 @@ const DateTimeView: FunctionComponent<Props> = (props) => {
       </RenderIf>
       {expander}
       <FlexBox justify="flex-end" mB mT>
-        <Text weight="bold">{formatDateTime(value)}</Text>
+        <Text weight="bold">{formatDateTime(date)}</Text>
       </FlexBox>
       <Footer>
         <Button

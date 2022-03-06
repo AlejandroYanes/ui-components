@@ -14,5 +14,6 @@ export interface InputProps extends PositionProps {
   onKeyDown?: (event) => void;
   showClear?: boolean;
   required?: boolean;
+  disabled?: boolean;
   error?: string;
 }

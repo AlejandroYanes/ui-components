@@ -3,7 +3,7 @@ import { ComponentStory, Meta } from '@storybook/react';
 import { IconButton as IconButtonComp } from 'components/Button';
 
 const meta = {
-  title: 'Example/Button/IconButton',
+  title: 'Example/Button',
   component: IconButtonComp,
   parameters: {
     controls: { expanded: true },

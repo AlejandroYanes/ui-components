@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import { formatDate, formatDateTime, formatTime } from 'helpers';
-import SvgIcon from 'components/SvgIcon';
+import SvgIcon, { Icons } from 'components/SvgIcon';
 import RenderIf from 'components/RenderIf';
 import { Text } from 'components/Typography';
 import AbsoluteContent from '../base/AbsoluteContent';
@@ -13,6 +13,7 @@ interface Props {
   type: 'date' | 'date-range' | 'date-time' | 'time' | 'time-range';
   padRight: boolean;
   isFocused: boolean;
+  disabled: boolean;
   onClick: () => void;
   onChange: (event) => void;
   onFocus: () => void;
@@ -21,7 +22,7 @@ interface Props {
 
 function getDateString(
   date: Date,
-  type: 'date' | 'date-range' | 'date-time' | 'time' | 'time-range',
+  type: Props['type'],
 ) {
   switch (type) {
     case 'date':
@@ -35,11 +36,22 @@ function getDateString(
   }
 }
 
+function getIcon(type: Props['type']): Icons {
+  switch (type) {
+    case 'time':
+    case 'time-range':
+      return 'CLOCK';
+    default:
+      return 'CALENDAR';
+  }
+}
+
 const Content: FunctionComponent<Props> = (props) => {
   const {
     type,
     value,
     padRight,
+    disabled,
     showClearButton,
     onClick,
     onChange,
@@ -74,19 +86,24 @@ const Content: FunctionComponent<Props> = (props) => {
       onFocus={onFocus}
       onBlur={onBlur}
       padRight={padRight}
+      disabled={disabled}
       tabIndex={0}
     >
       <AbsoluteContent>
         <SvgIcon
-          color="FONT"
+          color={disabled ? 'FONT_SHADE' : 'FONT'}
           size={iconSize}
-          icon="CALENDAR"
+          icon={getIcon(type)}
         />
       </AbsoluteContent>
-      <Text padding="0 16px 0 0">{startDate}</Text>
+      <Text color="current" padding="0 16px 0 0">
+        {startDate}
+      </Text>
       <RenderIf condition={!!endDate}>
-        <Separator />
-        <Text padding="0 0 0 16px">{endDate}</Text>
+        <Separator disabled={disabled} />
+        <Text color="current" padding="0 0 0 16px">
+          {endDate}
+        </Text>
       </RenderIf>
       <ClearButton
         returnValue={null}

@@ -6,15 +6,16 @@ import AbsoluteContent from './AbsoluteContent';
 interface Props {
   icon: Icons;
   topSpaced?: boolean;
+  disabled?: boolean;
 }
 
 const InputIcon: FunctionComponent<Props> = (props) => {
-  const { topSpaced, icon } = props;
+  const { topSpaced, disabled, icon } = props;
 
   return (
-    <RenderIf condition={!!icon}>
+    <RenderIf condition={!!icon && icon !== 'null'}>
       <AbsoluteContent topSpaced={topSpaced}>
-        <SvgIcon icon={icon} color="FONT" />
+        <SvgIcon icon={icon} color={disabled ? 'FONT_SHADE' : 'FONT'} />
       </AbsoluteContent>
     </RenderIf>
   );

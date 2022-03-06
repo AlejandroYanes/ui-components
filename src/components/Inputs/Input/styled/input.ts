@@ -1,8 +1,14 @@
-import styled, { css } from 'styled-components';
-import { getBgdColor, getPositionStyles, PositionProps } from 'helpers';
+import styled, { css, StyledProps } from 'styled-components';
+import {
+  getBgdColor,
+  getFontShadeColor,
+  getPositionStyles,
+  PositionProps
+} from 'helpers';
 import { elementHeight, inputBorderRadius } from 'styles/variables';
+import { InputProps } from '../../types';
 
-export const StyledContainer = styled.div.attrs((props: PositionProps) => props)`
+export const StyledContainer = styled.div<PositionProps>`
   ${getPositionStyles};
   display: flex;
   flex-direction: column;
@@ -13,8 +19,18 @@ export const StyledContainer = styled.div.attrs((props: PositionProps) => props)
 const getLeftPadding = ({ padLeft }) => `padding-left: ${padLeft ? 52 : 20}px`;
 const getRightPadding = ({ padRight }) => `padding-right: ${padRight ? 48 : 20}px`;
 
-export const getColorStyles = (props) => {
-  const { theme: { colors }, error } = props;
+export const getColorStyles = (props: StyledProps<InputProps>) => {
+  const { theme: { colors }, error, disabled } = props;
+
+  if (disabled) {
+    return css`
+      pointer-events: none;
+      cursor: default;
+      background-color: transparent;
+      color: ${getFontShadeColor};
+      border: 1px solid ${getFontShadeColor};
+    `
+  }
 
   const hoverBorderColor = error ? colors.ERROR_SHADE : colors.BRAND_SHADE;
   const focusBorderColor = error ? colors.ERROR_HIGHLIGHT : colors.BRAND_FONT_HIGHLIGHT;
@@ -41,7 +57,7 @@ export const getColorStyles = (props) => {
   `;
 };
 
-export const StyledInput = styled.input.attrs((props: any) => props)`
+export const StyledInput = styled.input<InputProps>`
   font-size: 16px;
   font-family: Roboto-Regular, sans-serif;
   letter-spacing: 0.5px;

@@ -6,7 +6,7 @@ interface Props extends PositionProps {
   weight?: 'light' | 'normal' | 'bold';
   size?: 'small' | 'medium' | 'large';
   // eslint-disable-next-line max-len
-  color?: 'brand' | 'accent' | 'warning' | 'error' | 'white' | 'font' | 'secondary' | 'background' | 'black';
+  color?: 'brand' | 'accent' | 'warning' | 'error' | 'font' | 'secondary' | 'white' | 'background' | 'black' | 'current';
   align?: 'left' | 'center' | 'right';
   italic?: boolean;
   as?: string;

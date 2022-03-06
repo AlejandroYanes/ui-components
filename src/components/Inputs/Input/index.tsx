@@ -19,6 +19,7 @@ const Input: FunctionComponent<InputProps> = (props) => {
     onKeyDown,
     showClear,
     required,
+    disabled,
     error,
     ...rest
   } = props;
@@ -29,19 +30,25 @@ const Input: FunctionComponent<InputProps> = (props) => {
 
   return (
     <StyledContainer {...rest} data-el="input-wrapper">
-      <InputLabel text={label} required={required} data-el="input-label" />
-      <InputIcon icon={icon} topSpaced={!!label} />
+      <InputLabel
+        text={label}
+        required={required}
+        disabled={disabled}
+        data-el="input-label"
+      />
+      <InputIcon icon={icon} disabled={disabled} topSpaced={!!label} />
       <StyledInput
         data-el="input"
         value={value}
         error={!!error}
-        padLeft={!!icon}
+        padLeft={!!icon && icon !== 'null'}
         padRight={showClear}
         placeholder={placeholder}
         onChange={handleOnChange}
         onFocus={onFocus}
         onBlur={onBlur}
         onKeyDown={onKeyDown}
+        disabled={disabled}
       />
       <ClearButton
         topSpaced={!!label}

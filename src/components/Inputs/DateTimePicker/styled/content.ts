@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { inputBorderRadius } from 'styles/variables';
-import { getGrayColor } from 'helpers';
 import { getColorStyles } from '../../Input/styled/input';
 
 const getRightPadding = (props) => `${props.padRight ? 48 : 16}px`;
 
-export const StyledContent = styled.div.attrs((props: any) => props)`
+export const StyledContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -22,9 +21,11 @@ export const StyledContent = styled.div.attrs((props: any) => props)`
   ${getColorStyles};
 `;
 
-export const Separator = styled.div`
+export const Separator = styled.div<{ disabled: boolean }>`
   width: 1px;
-  background-color: ${getGrayColor};
+  background-color: ${({ theme, disabled }) => (
+    disabled ? theme.colors.FONT_SHADE : theme.colors.GRAY
+  )};
   height: 20px;
 `;
 

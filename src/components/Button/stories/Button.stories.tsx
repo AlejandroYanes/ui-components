@@ -1,9 +1,8 @@
-import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 import { Button as ButtonComp } from 'components/Button';
 
 const meta = {
-  title: 'Example/Button/Button',
+  title: 'Example/Button',
   component: ButtonComp,
   parameters: {
     controls: { expanded: true },

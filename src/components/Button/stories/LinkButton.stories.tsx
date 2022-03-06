@@ -4,7 +4,7 @@ import { ComponentStory, Meta } from '@storybook/react';
 import { LinkButton as ButtonComp } from 'components/Button';
 
 const meta = {
-  title: 'Example/Button/LinkButton',
+  title: 'Example/Button',
   component: ButtonComp,
   parameters: {
     controls: { expanded: true },

@@ -25,8 +25,8 @@ const PrimaryRender = (props: ViewProps) => {
   return (
     <>
       <FlexBox>
-        <Clock value={value[0]} onChange={handleStartChange} />
-        <Clock value={value[1]} onChange={handleEndChange} />
+        <Clock value={times[0]} onChange={handleStartChange} />
+        <Clock value={times[1]} onChange={handleEndChange} />
       </FlexBox>
       <Footer>
         <Button
