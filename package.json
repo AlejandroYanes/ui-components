@@ -46,6 +46,7 @@
     "styled-components": "^5.3.1"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "autosize": "^4.0.2",
     "date-fns": "^2.16.1",
     "framer-motion": "^4.1.17",
