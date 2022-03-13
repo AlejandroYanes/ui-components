@@ -45,7 +45,6 @@ import ArrowLeftIcon from './ArrowLeft';
 import LightBulbIcon from './LightBulb';
 import InboxIcon from './Inbox';
 import ResumeIcon from './Resume';
-import BookmarkCheckedIcon from './BookmarkChecked';
 import MessageIcon from './Message';
 import MenuDotsIcon from './MenuDots';
 import LayersIcon from './Layers';
@@ -161,7 +160,6 @@ export const icons = {
   LIGHT_BULB: LightBulbIcon,
   INBOX: InboxIcon,
   RESUME: ResumeIcon,
-  BOOKMARK_CHECKED: BookmarkCheckedIcon,
   MESSAGE: MessageIcon,
   MENU_DOTS: MenuDotsIcon,
   LAYERS: LayersIcon,
