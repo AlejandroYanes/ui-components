@@ -97,7 +97,7 @@ const OptionsTray: FunctionComponent<Props> = (props) => {
         </OptionsList>
         <Edge>
           <RenderIf condition={isLoading}>
-            <SpinningDots size="small" margin="10px 0" />
+            <SpinningDots size="small" margin="10px 0" color="FONT" />
           </RenderIf>
         </Edge>
       </StyledOptionsTray>

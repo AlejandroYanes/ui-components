@@ -48,6 +48,8 @@ const Select: FunctionComponent<Props> = (props) => {
     showSearch,
     inline,
     anchorTo,
+    disabled,
+    required,
     ...rest
   } = props;
 
@@ -56,7 +58,11 @@ const Select: FunctionComponent<Props> = (props) => {
   const menuRef = useRef(undefined);
   const isHovered = useHoverState(menuRef);
 
-  const togglePopup = useCallback(() => setIsOpen((old) => !old), []);
+  const togglePopup = useCallback(() => {
+    if (!disabled) {
+      setIsOpen((old) => !old);
+    }
+  }, []);
 
   const handleSearch = useCallback(
     (event) => setSearch(getEventValue(event)),
@@ -96,13 +102,19 @@ const Select: FunctionComponent<Props> = (props) => {
   return (
     <FlexBox direction="column" ref={menuRef} {...rest} data-el="select-wrapper">
       <RenderIf condition={!inline}>
-        <InputLabel text={label} />
+        <InputLabel text={label} required={required} disabled={disabled} />
       </RenderIf>
-      <Content paddLeft={!!icon} onClick={togglePopup} data-el="select-content">
-        <InputIcon icon={icon} />
+      <Content
+        paddLeft={!!icon}
+        onClick={togglePopup}
+        disabled={disabled}
+        data-el="select-content"
+      >
+        <InputIcon icon={icon} disabled={disabled} />
         <Label label={inline && label} value={value} />
         <RightNode
           isOpen={isOpen}
+          disabled={disabled}
           isLoading={isLoading}
           isHovered={isHovered}
           showClear={showClear}
