@@ -29,11 +29,10 @@ const Input: FunctionComponent<InputProps> = (props) => {
   }, [onChange]);
 
   return (
-    <StyledContainer {...rest} data-el="input-wrapper">
+    <StyledContainer {...rest} disabled={disabled} data-el="input-wrapper">
       <InputLabel
         text={label}
         required={required}
-        disabled={disabled}
         data-el="input-label"
       />
       <InputIcon icon={icon} disabled={disabled} topSpaced={!!label} />

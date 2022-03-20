@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode, } from 'react';
-import { Icons } from 'components/SvgIcon';
+import { Icons } from '../Icons';
 
 export interface TabsProps {
   name: string;

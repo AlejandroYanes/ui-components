@@ -41,10 +41,6 @@ export default function getOutlineVariantStyles(
       color: ${getFontShadeColor};
       background-color: transparent;
       border: 1px solid ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
@@ -59,18 +55,10 @@ export default function getOutlineVariantStyles(
     background-color: transparent;
     border: 1px solid ${borderColor};
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
       border-color: ${borderHoverColor};
       background-color: ${bgHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

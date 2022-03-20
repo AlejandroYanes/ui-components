@@ -27,10 +27,6 @@ export default function getTextVariantStyles(
       cursor: not-allowed;
       background-color: transparent;
       color: ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
@@ -43,16 +39,8 @@ export default function getTextVariantStyles(
     color: ${fontColor};
     background-color: transparent;
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { AnimateSharedLayout } from 'framer-motion';
 import { PositionProps } from 'helpers';
 import { OptionsProvider } from './context';
-import { Options as StyledOptions } from './styled';
+import { Options as StyledOptions } from './styled/options';
 
 interface Props extends PositionProps {
   value: any;

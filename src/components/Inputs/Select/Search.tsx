@@ -1,8 +1,8 @@
 import { FunctionComponent, useRef } from 'react';
 import { useFocusState } from 'hooks/UI';
 import FlexBox from 'components/FlexBox';
-import SvgIcon from 'components/SvgIcon';
-import { StyledSearch } from './styled';
+import { StyledSearch } from './styled/search';
+import { SearchIcon } from '../../Icons';
 
 interface Props {
   value: string;
@@ -16,10 +16,7 @@ const Search: FunctionComponent<Props> = (props) => {
 
   return (
     <FlexBox align="center" padding="10px 16px 10px 32px" width="100%">
-      <SvgIcon
-        icon="SEARCH"
-        color={isFocus ? 'BRAND_FONT' : 'GRAY'}
-      />
+      <SearchIcon color={isFocus ? 'BRAND_FONT' : 'GRAY'} />
       <StyledSearch
         ref={inputRef}
         type="text"

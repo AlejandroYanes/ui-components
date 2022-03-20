@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 import InputComp, { SelectOption } from '../';
+import { TicketIcon } from '../../../Icons';
 
 const meta = {
   title: 'Example/Inputs/Select',
@@ -28,6 +29,7 @@ export const Select: ComponentStory<typeof InputComp> = (args) => {
   return (
     <InputComp
       {...args}
+      icon={<TicketIcon width={20} height={20} />}
       options={items}
       value={value}
       onChange={setValue}

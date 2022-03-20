@@ -1,21 +1,20 @@
-import React, { FunctionComponent } from 'react';
-import SvgIcon, { Icons } from 'components/SvgIcon';
+import React, { FunctionComponent, ReactNode } from 'react';
 import RenderIf from 'components/RenderIf';
 import AbsoluteContent from './AbsoluteContent';
 
 interface Props {
-  icon: Icons;
+  icon: ReactNode;
   topSpaced?: boolean;
   disabled?: boolean;
 }
 
 const InputIcon: FunctionComponent<Props> = (props) => {
-  const { topSpaced, disabled, icon } = props;
+  const { topSpaced, icon } = props;
 
   return (
-    <RenderIf condition={!!icon && icon !== 'null'}>
+    <RenderIf condition={!!icon}>
       <AbsoluteContent topSpaced={topSpaced}>
-        <SvgIcon icon={icon} color={disabled ? 'FONT_SHADE' : 'FONT'} />
+        {icon}
       </AbsoluteContent>
     </RenderIf>
   );

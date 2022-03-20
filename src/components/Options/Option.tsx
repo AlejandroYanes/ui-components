@@ -1,14 +1,13 @@
-import React, { FunctionComponent, useCallback } from 'react';
+import React, { FunctionComponent, ReactNode, useCallback } from 'react';
 import RenderIf from 'components/RenderIf';
-import { Icons } from 'components/SvgIcon';
 import { Text } from 'components/Typography';
 import { useOptionsContext } from './context';
-import { Icon, Label, Mark, Option as StyledOption } from './styled';
+import { Label, Mark, Option as StyledOption } from './styled/option';
 
 interface Props {
   value: any;
   label: string;
-  icon?: Icons;
+  icon?: ReactNode;
 }
 
 const spring = {
@@ -18,7 +17,7 @@ const spring = {
 };
 
 const Option: FunctionComponent<Props> = (props) => {
-  const { value, label, icon } = props;
+  const { value, label, icon = null } = props;
   const {
     color,
     size,
@@ -43,16 +42,12 @@ const Option: FunctionComponent<Props> = (props) => {
     >
       <Label>
         <RenderIf condition={!!icon}>
-          <Icon
-            icon={icon}
-            size={size}
-            color={isSelected ? 'BACKGROUND' : 'FONT'}
-          />
+          {icon}
         </RenderIf>
         <Text
           weight="bold"
           size={size}
-          color={isSelected ? 'background' : 'font'}
+          color="current"
         >
           {label}
         </Text>

@@ -5,15 +5,14 @@ import { StyledLabel } from './styled/label';
 interface Props {
   text: string;
   required?: boolean;
-  disabled?: boolean;
 }
 
 const InputLabel: FunctionComponent<Props> = (props) => {
-  const { text, required, disabled } = props;
+  const { text, required } = props;
 
   if (text) {
     return (
-      <StyledLabel disabled={disabled}>
+      <StyledLabel>
         {text}
         <RenderIf condition={required}>
           <sup>*</sup>

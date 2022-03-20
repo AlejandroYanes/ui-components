@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { Spring, Variants } from 'framer-motion';
-import SvgIcon from 'components/SvgIcon';
 import { SpinningDots } from 'components/Loaders';
+import { ChevronDownIcon } from 'components/Icons';
 import AbsoluteContent from '../base/AbsoluteContent';
 import ClearButton from '../base/ClearButton';
-import { IconBox } from './styled';
+import { IconBox } from './styled/right-node';
 import { SelectOption } from './';
 
 interface Props {
@@ -78,11 +78,7 @@ const RightNode: FunctionComponent<Props> = (props) => {
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
       >
-        <SvgIcon
-          icon="CHEVRON_DOWN"
-          width={18}
-          color={disabled ? 'FONT_SHADE' : 'FONT'}
-        />
+        <ChevronDownIcon width={18} height={18} />
       </IconBox>
     </AbsoluteContent>
   );

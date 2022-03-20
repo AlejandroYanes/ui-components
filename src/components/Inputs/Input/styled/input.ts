@@ -8,17 +8,6 @@ import {
 import { elementHeight, inputBorderRadius } from 'styles/variables';
 import { InputProps } from '../../types';
 
-export const StyledContainer = styled.div<PositionProps>`
-  ${getPositionStyles};
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  position: relative;
-`;
-
-const getLeftPadding = ({ padLeft }) => `padding-left: ${padLeft ? 52 : 20}px`;
-const getRightPadding = ({ padRight }) => `padding-right: ${padRight ? 48 : 20}px`;
-
 export const getColorStyles = (props: StyledProps<InputProps>) => {
   const { theme: { colors }, error, disabled } = props;
 
@@ -28,7 +17,11 @@ export const getColorStyles = (props: StyledProps<InputProps>) => {
       cursor: default;
       background-color: transparent;
       color: ${getFontShadeColor};
-      border: 1px solid ${getFontShadeColor};
+
+      & > input {
+        color: currentColor;
+        border: 1px solid ${getFontShadeColor};
+      }
     `
   }
 
@@ -36,26 +29,43 @@ export const getColorStyles = (props: StyledProps<InputProps>) => {
   const focusBorderColor = error ? colors.ERROR_HIGHLIGHT : colors.BRAND_FONT_HIGHLIGHT;
 
   return css`
-    border: 1px solid ${colors.GRAY};
-    background-color: ${getBgdColor};
     color: ${colors.FONT};
     transition: all 150ms linear;
 
-    &::selection {
-      background-color: ${colors.BRAND};
-      color: ${colors.WHITE};
+    & > input {
+      color: currentColor;
+      border: 1px solid ${colors.GRAY};
+      background-color: ${getBgdColor};
+      &::selection {
+        background-color: ${colors.BRAND};
+        color: ${colors.WHITE};
+      }
     }
 
     &:hover {
-      background-color: ${hoverBorderColor};
-      border-color: ${focusBorderColor};
+      & > input {
+        background-color: ${hoverBorderColor};
+        border-color: ${focusBorderColor};
+      }
     }
 
-    &:focus {
+    input:focus {
       border-color: ${focusBorderColor};
     }
   `;
 };
+
+export const StyledContainer = styled.div<PositionProps>`
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  position: relative;
+  ${getPositionStyles};
+  ${getColorStyles};
+`;
+
+const getLeftPadding = ({ padLeft }) => `padding-left: ${padLeft ? 48 : 20}px`;
+const getRightPadding = ({ padRight }) => `padding-right: ${padRight ? 48 : 20}px`;
 
 export const StyledInput = styled.input<InputProps>`
   font-size: 16px;
@@ -74,5 +84,4 @@ export const StyledInput = styled.input<InputProps>`
   transition: all 150ms linear;
   ${getLeftPadding};
   ${getRightPadding};
-  ${getColorStyles};
 `;

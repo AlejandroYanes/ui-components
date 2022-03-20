@@ -39,10 +39,6 @@ export default function getFlatVariantStyles(
       cursor: not-allowed;
       background-color: transparent;
       color: ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
@@ -54,17 +50,9 @@ export default function getFlatVariantStyles(
     background-color: transparent;
     color: ${fontColor};
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
       background-color: ${backgroundHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

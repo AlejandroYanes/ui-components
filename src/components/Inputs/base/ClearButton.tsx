@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { IconButton } from 'components/Button';
 import AbsoluteContent from './AbsoluteContent';
+import { CloseIcon } from '../../Icons';
 
 interface Props {
   showClear?: boolean;
@@ -23,7 +24,7 @@ const ClearButton: FunctionComponent<Props> = (props) => {
       <AbsoluteContent style={style} topSpaced={topSpaced} floatRight>
         <IconButton
           onClick={clearInput}
-          icon="CLOSE"
+          icon={<CloseIcon height={16} width={16} />}
           color="background"
           size="small"
         />

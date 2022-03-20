@@ -5,7 +5,7 @@ import React, {
   useContext,
   useMemo,
 } from 'react';
-import SvgIcon, { Icons } from 'components/SvgIcon';
+import SvgIcon, { Icons } from '../../Icons';
 import RenderIf from 'components/RenderIf';
 import tabsetContext from '../context';
 import { Label, Mark, StyledTab } from './styled';

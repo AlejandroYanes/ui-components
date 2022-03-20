@@ -23,7 +23,13 @@ export const DateRange: ComponentStory<typeof DateTimePickerComp> = (args) => {
   const [value, setValue] = useState([new Date(), addDays(new Date(), 5)]);
 
   return (
-    <DateTimePickerComp {...args} type="date-range" value={value} onChange={setValue} />
+    <DateTimePickerComp
+      {...args}
+      icon={null}
+      type="date-range"
+      value={value}
+      onChange={setValue}
+    />
   );
 }
 
@@ -37,7 +43,13 @@ export const TimeRange: ComponentStory<typeof DateTimePickerComp> = (args) => {
   const [value, setValue] = useState([new Date(), addHours(new Date(), 2)]);
 
   return (
-    <DateTimePickerComp {...args} type="time-range" value={value} onChange={setValue} />
+    <DateTimePickerComp
+      {...args}
+      icon={null}
+      type="time-range"
+      value={value}
+      onChange={setValue}
+    />
   );
 }
 

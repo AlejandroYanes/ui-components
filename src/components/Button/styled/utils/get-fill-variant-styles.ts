@@ -14,10 +14,6 @@ export default function getFillVariantStyles(
       cursor: default;
       color: ${getFontSecColor};
       background-color: ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
@@ -45,17 +41,9 @@ export default function getFillVariantStyles(
     color: ${fontColor};
     background-color: ${backgroundColor};
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
       background-color: ${backgroundHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 import { IconButton as IconButtonComp } from 'components/Button';
+import { BellIcon } from '../../Icons';
 
 const meta = {
   title: 'Example/Button',
@@ -22,7 +23,7 @@ export const IconButton: ComponentStory<typeof IconButtonComp> = (args) => (
 IconButton.args = {
   color: 'brand',
   variant: 'fill',
-  icon: 'BELL',
+  icon: <BellIcon />,
 };
 
 export default meta;

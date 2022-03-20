@@ -10,6 +10,10 @@ export const Text = styled.span.attrs(anyPropsAttrs)`
   transition: all 150ms linear;
 `;
 
+export const IconWrapper = styled.span`
+  opacity: ${({ show }) => show ? 1 : 0};
+`;
+
 export const LoadingLayer = styled.div.attrs(anyPropsAttrs)`
   position: absolute;
   top: 0;
@@ -20,6 +24,7 @@ export const LoadingLayer = styled.div.attrs(anyPropsAttrs)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: ${({ show }) => show ? 1 : -1};
   opacity: ${({ show }) => show ? 1 : 0};
   transition: all 150ms linear;
 `;

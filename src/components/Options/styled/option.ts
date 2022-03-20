@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Variations } from 'styles/colors';
 import { anyPropsAttrs, getColorVariation } from 'helpers';
-import SvgIcon from 'components/SvgIcon';
 
 const getSizeStyles = (props) => {
   const { size } = props;
@@ -45,6 +44,10 @@ export const Option = styled.li.attrs(anyPropsAttrs)`
   ${getSizeStyles};
   ${({ fullWidth }) => fullWidth ? 'flex: 1;' : ''}
 
+  & svg {
+    margin-right: 6px;
+  }
+
   &:hover, &:focus {
     outline: none;
     background-color: ${getBackgroundColor};
@@ -64,10 +67,6 @@ export const Label = styled.div`
   position: relative;
   z-index: 2;
   pointer-events: none;
-`;
-
-export const Icon = styled(SvgIcon)`
-  margin-right: 6px;
 `;
 
 const getMarkColorStyles = (props) => {

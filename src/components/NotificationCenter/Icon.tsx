@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { NotificationType } from 'notifications';
-import SvgIcon, { Icons } from 'components/SvgIcon';
+import SvgIcon, { Icons } from '../Icons';
 
 interface Props {
   type: NotificationType;
