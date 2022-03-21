@@ -45,7 +45,6 @@ import ArrowLeftIcon from './ArrowLeft';
 import LightBulbIcon from './LightBulb';
 import InboxIcon from './Inbox';
 import ResumeIcon from './Resume';
-import BookmarkCheckedIcon from './BookmarkChecked';
 import MessageIcon from './Message';
 import MenuDotsIcon from './MenuDots';
 import LayersIcon from './Layers';
