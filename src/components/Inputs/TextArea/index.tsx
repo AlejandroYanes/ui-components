@@ -13,6 +13,8 @@ interface Props extends PositionProps {
   rows?: number;
   showClear?: boolean;
   autosize?: boolean;
+  required?: boolean;
+  disabled?: boolean;
   maxLength?: number;
   onChange: (event) => void;
   onFocus?: (event) => void;
@@ -31,6 +33,8 @@ const TextArea: FunctionComponent<Props> = (props) => {
     rows,
     autosize,
     maxLength,
+    required,
+    disabled,
     ...rest
   } = props;
   const textAreaRef = useRef(undefined);
@@ -57,7 +61,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
 
   return (
     <StyledContainer {...rest}>
-      <InputLabel text={label} />
+      <InputLabel text={label} required={required} disabled={disabled} />
       <StyledTextArea
         ref={textAreaRef}
         rows={rows}
@@ -66,6 +70,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
         onChange={handleChange}
         onFocus={onFocus}
         onBlur={onBlur}
+        disabled={disabled}
       />
       <RightNode
         topSpaced={!!label}

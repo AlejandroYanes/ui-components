@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useCallback, useMemo } from 'react';
-import { getMonthName } from 'helpers';
+import { capitalizeFirstLetter, getMonthName } from 'helpers';
+import { useAppLocale } from 'components/Configuration';
 import { months } from './types';
 import { StyledList as StyledMonths, Item as Month } from './styled/months-years';
 
@@ -10,6 +11,7 @@ interface Props {
 
 const Months: FunctionComponent<Props> = (props) => {
   const { currentDate, onChange } = props;
+  const locale = useAppLocale();
 
   const handleMonthChange = useCallback((event) => {
     const { month } = event.target.dataset;
@@ -20,7 +22,7 @@ const Months: FunctionComponent<Props> = (props) => {
     months.map((m) => (
       <Month
         key={m.getTime()}
-        label={getMonthName(m)}
+        label={capitalizeFirstLetter(getMonthName(m, locale))}
         data-month={m.getMonth()}
         isSelected={m.getMonth() === currentDate.getMonth()}
         onClick={handleMonthChange}

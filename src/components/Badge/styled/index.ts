@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { Variations } from 'styles/colors';
 import { elementHeight } from 'styles/variables';
 import { getColorVariation, getEllipsisStyles, getPositionStyles } from 'helpers';
-import SvgIcon from 'components/SvgIcon';
 
 function resolveFontColor(props) {
   const { color, theme: { colors } } = props;
@@ -64,8 +63,8 @@ export const StyledBadge = styled.div.attrs((props: any) => props)`
   ${resolveButtonStyles};
   ${getPositionStyles};
   ${getEllipsisStyles};
-`;
 
-export const Icon = styled(SvgIcon)`
-  margin-right: 4px;
+  & svg {
+    margin-right: 4px;
+  }
 `;

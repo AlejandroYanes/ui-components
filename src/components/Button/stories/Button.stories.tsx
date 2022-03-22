@@ -1,9 +1,9 @@
-import React from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 import { Button as ButtonComp } from 'components/Button';
+import { HeartIcon } from 'components/Icons';
 
 const meta = {
-  title: 'Example/Button/Button',
+  title: 'Example/Button',
   component: ButtonComp,
   parameters: {
     controls: { expanded: true },
@@ -16,13 +16,13 @@ const meta = {
 } as Meta;
 
 export const Button: ComponentStory<typeof ButtonComp> = (args) => (
-  <ButtonComp {...args} />
+  <ButtonComp {...args} leftIcon={<HeartIcon />} />
 );
 
 Button.args = {
   label: 'Test Button',
   variant: 'fill',
-  color: 'brand',
+  color: 'font',
   type: 'button',
 };
 

@@ -17,29 +17,24 @@ const sizeMap = {
 const getColor = (props) => {
   const { theme: { colors }, color } = props;
 
-  if (color === 'black') {
-    return `color: ${getThemeBlackColor({ theme: props.theme })}`;
+  switch (color) {
+    case 'current':
+      return 'color: currentColor;';
+    case 'black':
+      return `color: ${getThemeBlackColor({ theme: props.theme })}`;
+    case 'secondary':
+      return `color: ${colors.FONT_SECONDARY}`;
+    case 'font':
+      return `color: ${colors.FONT}`;
+    case 'background':
+      return `color: ${colors.BACKGROUND}`;
+    case 'white':
+      return `color: ${colors.WHITE}`;
+    default: {
+      const fontColor = colors[`${color.toUpperCase()}_FONT`];
+      return `color: ${fontColor}`;
+    }
   }
-
-  if (color === 'secondary') {
-    return `color: ${colors.FONT_SECONDARY}`;
-  }
-
-  if (color === 'font') {
-    return `color: ${colors.FONT}`;
-  }
-
-  if (color === 'background') {
-    return `color: ${colors.BACKGROUND}`;
-  }
-
-  if (color === 'white') {
-    return `color: ${colors.WHITE}`;
-  }
-
-  const fontColor = colors[`${color.toUpperCase()}_FONT`];
-
-  return `color: ${fontColor}`;
 };
 
 const getItalicStyle = (props) => {

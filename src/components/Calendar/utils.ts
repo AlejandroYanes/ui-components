@@ -1,19 +1,6 @@
 import { endOfMonth, getDaysInMonth, setDate, startOfMonth } from 'date-fns';
 import { createContext } from 'react';
 
-export const monthFormatter = new Intl.DateTimeFormat('default', {
-  month: 'long',
-});
-
-export const yearFormatter = new Intl.DateTimeFormat('default', {
-  year: 'numeric',
-});
-
-export const monthYearFormatter = new Intl.DateTimeFormat('default', {
-  month: 'long',
-  year: 'numeric',
-});
-
 export function resolveWeeks(month: Date): Date[][] {
   const firstDayOfMonth = startOfMonth(month);
   const firstWeekDay = firstDayOfMonth.getDay();

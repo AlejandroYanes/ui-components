@@ -12,7 +12,7 @@ export function useSimplePagination(total: number, initialPage = 0) {
     const prevPage = old - 1;
     return prevPage < 0 ? total - 1 : prevPage;
 
-  }), []);
+  }), [total]);
 
   return { page, setPage, goNext, goBack };
 }

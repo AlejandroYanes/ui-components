@@ -1,12 +1,12 @@
+import { ReactNode } from 'react';
 import { PositionProps } from 'helpers';
-import { Icons } from '../SvgIcon';
 
 export interface InputProps extends PositionProps {
   id?: string;
   name?: string;
   label?: string;
   placeholder?: string;
-  icon?: Icons;
+  icon?: ReactNode;
   value: any;
   onChange: (event) => void;
   onFocus?: (event) => void;
@@ -14,5 +14,6 @@ export interface InputProps extends PositionProps {
   onKeyDown?: (event) => void;
   showClear?: boolean;
   required?: boolean;
+  disabled?: boolean;
   error?: string;
 }

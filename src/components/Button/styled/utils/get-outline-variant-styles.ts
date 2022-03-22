@@ -4,30 +4,6 @@ import { getColorVariation, getFontShadeColor } from 'helpers';
 import getBtnFontColor from './get-btn-font-color';
 import getBtnFontHoverColor from './get-btn-font-hover-color';
 
-const getBorderColor = (colors: ColorScheme, color: string) => {
-  if (color === 'background') {
-    return colors.GRAY;
-  }
-
-  return  getColorVariation(colors, color, Variations.FONT);
-};
-
-const getBorderHoverColor = (colors: ColorScheme, color: string) => {
-  if (color === 'background') {
-    return colors.BRAND_FONT_HIGHLIGHT;
-  }
-
-  return  getColorVariation(colors, color, Variations.FONT_HIGHLIGHT);
-};
-
-const getBgHoverColor = (colors: ColorScheme, color: string) => {
-  if (color === 'background') {
-    return colors.BRAND_SHADE;
-  }
-
-  return  getColorVariation(colors, color, Variations.SHADE);
-};
-
 export default function getOutlineVariantStyles(
   colors: ColorScheme,
   color: string,
@@ -41,36 +17,32 @@ export default function getOutlineVariantStyles(
       color: ${getFontShadeColor};
       background-color: transparent;
       border: 1px solid ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
-  const fontColor = getBtnFontColor(colors, color);
-  const borderColor = getBorderColor(colors, color);
-  const borderHoverColor = getBorderHoverColor(colors, color);
-  const fontHoverColor = getBtnFontHoverColor(colors, color);
-  const bgHoverColor = getBgHoverColor(colors, color);
+  const fontColor = color === 'font'
+    ? colors.FONT
+    : getBtnFontColor(colors, color);
+  const borderColor = color === 'font'
+    ? colors.FONT
+    : getColorVariation(colors, color, Variations.FONT);
+  const borderHoverColor = color === 'font'
+    ? colors.FONT
+    : getColorVariation(colors, color, Variations.FONT_HIGHLIGHT)
+  const fontHoverColor = color === 'font'
+    ? colors.FONT
+    : getBtnFontHoverColor(colors, color);
+  const bgHoverColor = getColorVariation(colors, color, Variations.SHADE);
 
   return css`
     color: ${fontColor};
     background-color: transparent;
     border: 1px solid ${borderColor};
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
       border-color: ${borderHoverColor};
       background-color: ${bgHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

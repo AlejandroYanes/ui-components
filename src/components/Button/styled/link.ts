@@ -38,6 +38,6 @@ export const StyledLink = styled(Link)`
   ${getPositionStyles};
 
   &:active {
-    transform: scale(0.9);
+    transform: translateY(1px);
   }
 `;

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Layout } from 'components/Configuration';
+import { Layout, useAppLocale } from 'components/Configuration';
 import FlexBox from 'components/FlexBox';
 import RenderIf from 'components/RenderIf';
 import Calendar from 'components/Calendar';
@@ -8,10 +8,12 @@ import { Button } from 'components/Button';
 import Options from './Options';
 import { Footer } from './styled';
 import { ViewProps } from './type';
+import { translations } from './translations';
 
 const PrimaryRender: FunctionComponent<ViewProps> = (props) => {
   const { value, showOptions, onChange, onClose } = props;
   const [dates, setDates] = useState(value);
+  const locale = useAppLocale();
 
   const sendDateSelected = () => onChange(dates);
 
@@ -26,14 +28,14 @@ const PrimaryRender: FunctionComponent<ViewProps> = (props) => {
       <Footer>
         <Button
           onClick={onClose}
-          label="Cancel"
-          color="background"
-          variant="fill"
+          label={translations[locale].cancelButton}
+          color="brand"
+          variant="outline"
           mR
         />
         <Button
           variant="fill"
-          label="Select"
+          label={translations[locale].acceptButton}
           onClick={sendDateSelected}
         />
       </Footer>
@@ -44,6 +46,7 @@ const PrimaryRender: FunctionComponent<ViewProps> = (props) => {
 const MobileRender: FunctionComponent<ViewProps> = (props) => {
   const { value, onChange, onClose } = props;
   const [dates, setDates] = useState(value);
+  const locale = useAppLocale();
 
   const sendDateSelected = () => onChange(dates);
 
@@ -53,14 +56,14 @@ const MobileRender: FunctionComponent<ViewProps> = (props) => {
       <Footer>
         <Button
           onClick={onClose}
-          label="Cancel"
-          color="background"
-          variant="fill"
+          label={translations[locale].cancelButton}
+          color="brand"
+          variant="outline"
           mR
         />
         <Button
           variant="fill"
-          label="Select"
+          label={translations[locale].acceptButton}
           onClick={sendDateSelected}
         />
       </Footer>

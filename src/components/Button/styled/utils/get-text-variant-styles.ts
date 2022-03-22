@@ -3,18 +3,6 @@ import { ColorScheme, Variations } from 'styles/colors';
 import { getColorVariation, getFontShadeColor } from 'helpers';
 import getBtnFontColor from './get-btn-font-color';
 
-const getFontHoverColor = (colors: ColorScheme, color: string) => {
-  if (color === 'background') {
-    return colors.BRAND_FONT_HIGHLIGHT;
-  }
-
-  if (color === 'font') {
-    return colors.BACKGROUND_LIGHTER;
-  }
-
-  return  getColorVariation(colors, color, Variations.FONT_HIGHLIGHT);
-}
-
 export default function getTextVariantStyles(
   colors: ColorScheme,
   color: string,
@@ -27,15 +15,15 @@ export default function getTextVariantStyles(
       cursor: not-allowed;
       background-color: transparent;
       color: ${getFontShadeColor};
-
-      & > svg > path {
-        fill: ${getFontShadeColor};
-      }
     `;
   }
 
-  const fontColor = getBtnFontColor(colors, color);
-  const fontHoverColor = getFontHoverColor(colors, color);
+  const fontColor = color === 'font'
+    ? colors.FONT
+    : getBtnFontColor(colors, color);
+  const fontHoverColor = color === 'font'
+    ? colors.FONT
+    : getColorVariation(colors, color, Variations.FONT_HIGHLIGHT);
 
   return css`
     padding: 0;
@@ -43,16 +31,8 @@ export default function getTextVariantStyles(
     color: ${fontColor};
     background-color: transparent;
 
-    & > svg > path {
-      fill: ${fontColor};
-    }
-
     &:hover, &:focus {
       color: ${fontHoverColor};
-
-      & > svg > path {
-        fill: ${fontHoverColor};
-      }
     }
   `;
 }

@@ -9,7 +9,6 @@ import {
 } from 'react';
 import { getEventValue } from 'helpers';
 import { useHoverState } from 'hooks/UI';
-import FlexBox from 'components/FlexBox';
 import RenderIf from 'components/RenderIf';
 import { InputProps } from '../types';
 import InputLabel from '../base/Label';
@@ -17,7 +16,8 @@ import InputIcon from '../base/Icon';
 import OptionsTray from './OptionsTray';
 import RightNode from './RightNode';
 import Label from './Label';
-import { Content, TrayContainer } from './styled';
+import { Wrapper } from './styled/wrapper';
+import { Content, TrayContainer } from './styled/select';
 
 export interface SelectOption {
   value: string | number;
@@ -48,6 +48,8 @@ const Select: FunctionComponent<Props> = (props) => {
     showSearch,
     inline,
     anchorTo,
+    disabled,
+    required,
     ...rest
   } = props;
 
@@ -56,7 +58,11 @@ const Select: FunctionComponent<Props> = (props) => {
   const menuRef = useRef(undefined);
   const isHovered = useHoverState(menuRef);
 
-  const togglePopup = useCallback(() => setIsOpen((old) => !old), []);
+  const togglePopup = useCallback(() => {
+    if (!disabled) {
+      setIsOpen((old) => !old);
+    }
+  }, []);
 
   const handleSearch = useCallback(
     (event) => setSearch(getEventValue(event)),
@@ -94,15 +100,20 @@ const Select: FunctionComponent<Props> = (props) => {
   }, [isOpen]);
 
   return (
-    <FlexBox direction="column" ref={menuRef} {...rest} data-el="select-wrapper">
+    <Wrapper ref={menuRef} disabled={disabled} {...rest} data-el="select-wrapper">
       <RenderIf condition={!inline}>
-        <InputLabel text={label} />
+        <InputLabel text={label} required={required} />
       </RenderIf>
-      <Content paddLeft={!!icon} onClick={togglePopup} data-el="select-content">
-        <InputIcon icon={icon} />
+      <Content
+        paddLeft={!!icon}
+        onClick={togglePopup}
+        data-el="select-content"
+      >
+        <InputIcon icon={icon} disabled={disabled} />
         <Label label={inline && label} value={value} />
         <RightNode
           isOpen={isOpen}
+          disabled={disabled}
           isLoading={isLoading}
           isHovered={isHovered}
           showClear={showClear}
@@ -124,7 +135,7 @@ const Select: FunctionComponent<Props> = (props) => {
           onSearch={handleSearch}
         />
       </TrayContainer>
-    </FlexBox>
+    </Wrapper>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { formatDateTime } from 'helpers';
+import { useAppLocale } from 'components/Configuration';
 import FlexBox from 'components/FlexBox';
 import { Text } from 'components/Typography';
 import { Tab, Tabset } from 'components/Tabset';
@@ -9,6 +10,8 @@ import Clock from 'components/Clock';
 import { Button } from 'components/Button';
 import { ClockWrapper, Footer } from './styled';
 import { ViewProps } from './type';
+import { translations } from './translations';
+import { CalendarIcon, ClockIcon } from '../../../Icons';
 
 interface Props extends ViewProps {
   value: Date;
@@ -25,6 +28,7 @@ const DateTimeView: FunctionComponent<Props> = (props) => {
   const { value, onChange, onClose } = props;
   const [activeTab, setActiveTab] = useState(Tabs.Calendar);
   const [date, setDate] = useState(value);
+  const locale = useAppLocale();
 
   const handleChange = (nextValue) => {
     setActiveTab(Tabs.Clock);
@@ -36,8 +40,8 @@ const DateTimeView: FunctionComponent<Props> = (props) => {
   return (
     <>
       <Tabset activeTab={activeTab} onTabChange={setActiveTab} fullWidth mB>
-        <Tab name={Tabs.Calendar} icon="CALENDAR" />
-        <Tab name={Tabs.Clock} icon="CLOCK" />
+        <Tab name={Tabs.Calendar} icon={<CalendarIcon />} />
+        <Tab name={Tabs.Clock} icon={<ClockIcon />} />
       </Tabset>
       <RenderIf condition={activeTab === Tabs.Calendar}>
         <Calendar value={date} onChange={handleChange} />
@@ -49,19 +53,19 @@ const DateTimeView: FunctionComponent<Props> = (props) => {
       </RenderIf>
       {expander}
       <FlexBox justify="flex-end" mB mT>
-        <Text weight="bold">{formatDateTime(value)}</Text>
+        <Text weight="bold">{formatDateTime(date, locale)}</Text>
       </FlexBox>
       <Footer>
         <Button
           onClick={onClose}
-          label="Cancel"
-          color="background"
-          variant="fill"
+          label={translations[locale].cancelButton}
+          color="brand"
+          variant="outline"
           mR
         />
         <Button
           variant="fill"
-          label="Select"
+          label={translations[locale].acceptButton}
           onClick={sendDateSelected}
         />
       </Footer>

@@ -1,7 +1,7 @@
 {
   "name": "activate-components",
-  "version": "0.0.15",
-  "description": "base components for the Activate project",
+  "version": "0.0.16",
+  "description": "UI library for the DevLand org",
   "author": "ayanes",
   "license": "MIT",
   "keywords": [

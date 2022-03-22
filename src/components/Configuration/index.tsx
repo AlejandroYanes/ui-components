@@ -9,20 +9,23 @@ export * from './types';
 
 interface Props {
   palette: Palette;
+  locale?: 'en' | 'es';
 }
 
 interface Theme {
   colors: ColorScheme;
   layout: Layout;
+  locale: string;
 }
 
 const Configuration: FunctionComponent<Props> = (props) => {
-  const { palette, children } = props;
+  const { palette, locale = 'en', children } = props;
   const layout = useLayout();
 
   const theme = {
     colors: composeColorScheme({ ...basicColors ,...palette }),
     layout,
+    locale,
   };
 
   return (
@@ -34,5 +37,6 @@ const Configuration: FunctionComponent<Props> = (props) => {
 
 export const useAppLayout = () => (useTheme() as Theme).layout;
 export const useAppColors = () => (useTheme() as Theme).colors;
+export const useAppLocale = () => (useTheme() as Theme).locale;
 
 export default Configuration;

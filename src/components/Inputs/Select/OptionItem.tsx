@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
-import SvgIcon from 'components/SvgIcon';
 import RenderIf from 'components/RenderIf';
-import { OptionIcon, StyledOption } from './styled';
+import { CheckMarkIcon } from 'components/Icons';
+import { OptionIcon, StyledOption } from './styled/option';
 import { SelectOption } from './index';
 
 interface Props {
@@ -23,7 +23,7 @@ const OptionItem: FunctionComponent<Props> = (props) => {
     >
       <RenderIf condition={isSelected}>
         <OptionIcon>
-          <SvgIcon id="select-mark" icon="CHECK_MARK" color="BRAND_FONT" />
+          <CheckMarkIcon id="select-mark" />
         </OptionIcon>
       </RenderIf>
       <span data-el="option-content">{option.label}</span>
