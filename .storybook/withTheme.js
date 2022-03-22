@@ -6,7 +6,7 @@ import {
   NeonLightsTheme,
   SummerVibesTheme,
 } from '../src/styles/themes';
-import { basicColors, Configuration } from '../src';
+import { basicColors, Configuration, NotificationCenter } from '../src';
 
 const themes = {
   'fruits': FruitsTheme,
@@ -36,6 +36,7 @@ export const withThemeProvider = (Story, context) => {
   return (
     <Configuration palette={palette} locale="es">
       <Story {...context} />
+      <NotificationCenter />
     </Configuration>
   )
 }

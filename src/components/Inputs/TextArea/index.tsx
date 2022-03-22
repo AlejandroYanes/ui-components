@@ -61,7 +61,7 @@ const TextArea: FunctionComponent<Props> = (props) => {
 
   return (
     <StyledContainer {...rest}>
-      <InputLabel text={label} required={required} disabled={disabled} />
+      <InputLabel text={label} required={required} />
       <StyledTextArea
         ref={textAreaRef}
         rows={rows}

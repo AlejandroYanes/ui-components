@@ -58,7 +58,7 @@ const getVariantStyles = (props) => {
     cursor: pointer;
 
     &:hover {
-      background-color: ${colors.GRAY_SHADE}
+      background-color: ${colors.GREY_SHADE}
     }
   `;
 };

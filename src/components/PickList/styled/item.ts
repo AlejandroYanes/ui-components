@@ -46,7 +46,7 @@ const getColorStyles = (props) => {
     border: 1px ${dashed ? 'dashed' : 'solid'} ${borderColor};
 
     &:active {
-      transform: scale(0.95);
+      transform: translateY(1px);
     }
 
     &:hover {

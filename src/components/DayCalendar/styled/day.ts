@@ -18,7 +18,7 @@ export const Day = styled.li`
 
   &:hover, &:focus {
     outline: none;
-    background-color: ${({ theme }) => theme.colors.GRAY_SHADE};
+    background-color: ${({ theme }) => theme.colors.GREY_SHADE};
   }
 `;
 

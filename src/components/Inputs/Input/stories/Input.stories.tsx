@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
+import FlexBox from 'components/FlexBox';
+import { UserIcon } from 'components/Icons';
 import InputComp from '../';
-import FlexBox from '../../../FlexBox';
-import { UserIcon } from '../../../Icons';
 
 const meta = {
   title: 'Example/Inputs/Input',

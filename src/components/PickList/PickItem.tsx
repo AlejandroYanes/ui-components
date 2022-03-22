@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useCallback } from 'react';
 import RenderIf from 'components/RenderIf';
-import SvgIcon from '../Icons';
 import { usePickListContext } from './context';
 import { StyledItem, Touchable } from './styled/item';
 import AbsoluteContent from '../AbsoluteContent';
+import { CheckCircleFillIcon } from '../Icons';
 
 interface Props {
   value: string;
@@ -48,10 +48,7 @@ const PickItem: FunctionComponent<Props> = (props) => {
         {children}
         <RenderIf condition={isSelected}>
           <AbsoluteContent top={4} right={4}>
-            <SvgIcon
-              color={markerColor}
-              icon="CHECK_CIRCLE_FILL"
-            />
+            <CheckCircleFillIcon color={markerColor} />
           </AbsoluteContent>
         </RenderIf>
       </Touchable>
