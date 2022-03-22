@@ -57,7 +57,7 @@ export const Button = styled.button.attrs(anyPropsAttrs)`
   ${getPositionStyles};
 
   &:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
   }
 
   & > svg * {

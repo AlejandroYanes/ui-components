@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { getPositionStyles } from 'helpers';
-import { elementHeight } from 'styles';
+import { elementHeight } from 'styles/variables';
 import { getVariantStyles } from './utils';
 
 const sizeMap: { [ size: string ]: string } = {
@@ -36,6 +36,6 @@ export const StyledIconButton = styled.button`
   ${getPositionStyles};
 
   &:active {
-    transform: scale(0.98);
+    transform: translateY(1px);
   }
 `;

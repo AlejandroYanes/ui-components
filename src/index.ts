@@ -36,7 +36,7 @@ import {
 import { Menu, MenuItem, MenuLink, MenuDivider } from './components/Menu';
 import Modal from './components/Modal';
 import NotificationCenter from './components/NotificationCenter';
-import { Options, Option } from './components/Options';
+import { Segments, Segment } from './components/Segments';
 import Page from './components/Page';
 import { PickList, PickItem } from './components/PickList';
 import RenderByLayout from './components/RenderByLayout';
@@ -62,7 +62,6 @@ import {
   BasketballIcon,
   BellIcon,
   BellSlashIcon,
-  BookmarkCheckedIcon,
   BookmarkFilledIcon,
   BookIcon,
   BookmarkAddIcon,
@@ -317,8 +316,8 @@ export {
   MenuDivider,
   Modal,
   NotificationCenter,
-  Options,
-  Option,
+  Segments,
+  Segment,
   Page,
   PickList,
   PickItem,
@@ -348,7 +347,6 @@ export {
   BasketballIcon,
   BellIcon,
   BellSlashIcon,
-  BookmarkCheckedIcon,
   BookmarkFilledIcon,
   BookIcon,
   BookmarkAddIcon,

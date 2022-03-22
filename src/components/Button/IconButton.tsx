@@ -4,7 +4,7 @@ import { CommonButtonProps, IconButtonSize } from './types';
 
 interface Props extends CommonButtonProps {
   icon: ReactNode;
-  size: IconButtonSize;
+  size?: IconButtonSize;
 }
 
 const IconButton: FunctionComponent<Props> = (props) => {

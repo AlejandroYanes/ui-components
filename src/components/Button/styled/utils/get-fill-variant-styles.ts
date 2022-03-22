@@ -17,23 +17,17 @@ export default function getFillVariantStyles(
     `;
   }
 
-  const fontColor = (
-    color === 'background' ? colors.FONT : colors.BACKGROUND_LIGHTER
-  );
-  const fontHoverColor = (
-    color === 'background'
-      ? colors.BRAND_FONT_HIGHLIGHT
-      : colors.BACKGROUND_LIGHTER
-  );
+  const fontColor = colors.BACKGROUND_LIGHTER;
+  const fontHoverColor = colors.BACKGROUND_LIGHTER;
 
   const backgroundColor = (
-    color === 'background'
-      ? colors.BACKGROUND
+    color === 'font'
+      ? colors.FONT
       : getColorVariation(colors, color, Variations.BG)
   );
   const backgroundHoverColor = (
-    color === 'background'
-      ? colors.BRAND_SHADE
+    color === 'font'
+      ? colors.FONT
       : getColorVariation(colors, color, Variations.BG_HIGHLIGHT)
   );
 

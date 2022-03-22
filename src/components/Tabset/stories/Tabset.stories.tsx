@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentStory, Meta } from '@storybook/react';
 import { Tab, Tabset as TabsetComponent } from '../';
+import AddBookmarkIcon from '../../Icons/AddBookmark';
+import { BookIcon, GlassMartiniIcon } from '../../Icons';
 
 const meta = {
   title: 'Example/Tabset',
@@ -27,9 +29,9 @@ export const Tabset: ComponentStory<typeof TabsetComponent> = (args) => {
 
   return (
     <TabsetComponent {...args} activeTab={activeTab} onTabChange={setActiveTab}>
-      <Tab name="tab-1" label="Tab 1" icon="ADD_BOOKMARK" />
-      <Tab name="tab-2" label="Tab 2" icon="GLASS_MARTINI" />
-      <Tab name="tab-3" label="Tab 3" icon="BOOK" />
+      <Tab name="tab-1" label="Tab 1" icon={<AddBookmarkIcon />} />
+      <Tab name="tab-2" label="Tab 2" icon={<GlassMartiniIcon />} />
+      <Tab name="tab-3" label="Tab 3" icon={<BookIcon />} />
     </TabsetComponent>
   );
 };

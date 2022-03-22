@@ -9,8 +9,7 @@ export type ButtonColors = (
   'info' |
   'warning' |
   'error' |
-  'font' |
-  'background'
+  'font'
   );
 
 export interface CommonButtonProps extends PositionProps {

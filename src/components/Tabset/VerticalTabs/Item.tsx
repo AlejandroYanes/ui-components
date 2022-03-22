@@ -1,18 +1,11 @@
-import React, {
-  FunctionComponent,
-  ReactNode,
-  useCallback,
-  useContext,
-  useMemo,
-} from 'react';
-import SvgIcon, { Icons } from '../../Icons';
+import React, { FunctionComponent, ReactNode, useCallback, useContext, } from 'react';
 import RenderIf from 'components/RenderIf';
 import tabsetContext from '../context';
 import { Label, Mark, StyledTab } from './styled';
 
 interface Props {
   name: string;
-  icon?: Icons | ReactNode;
+  icon?: ReactNode;
   label?: string;
   onClick?: (activeTab: string) => void;
 }
@@ -49,15 +42,6 @@ const Item: FunctionComponent<Props> = (props) => {
   }, [onTabChange, name]);
 
   const isSelected = name === activeTab;
-  const iconComponent = useMemo(() => {
-    if (typeof icon === 'string') {
-      return (
-        <SvgIcon icon={icon as Icons} />
-      );
-    }
-
-    return icon;
-  }, [icon, disableFocus]);
 
   return (
     <StyledTab
@@ -70,7 +54,7 @@ const Item: FunctionComponent<Props> = (props) => {
       onClick={handleClick}
     >
       <RenderIf condition={!!icon}>
-        {iconComponent}
+        {icon}
       </RenderIf>
       <RenderIf condition={!!label}>
         <Label isSelected={isSelected} spaced={!!icon}>

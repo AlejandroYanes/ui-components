@@ -30,7 +30,7 @@ const getBackgroundColor = (props) => {
   return getColorVariation(colors, color, Variations.SHADE);
 };
 
-export const Option = styled.li.attrs(anyPropsAttrs)`
+export const Segment = styled.li.attrs(anyPropsAttrs)`
   margin: 0 6px 0 0;
   display: flex;
   align-items: center;
@@ -67,6 +67,9 @@ export const Label = styled.div`
   position: relative;
   z-index: 2;
   pointer-events: none;
+  color: ${({ isSelected, theme }) => (
+    isSelected ? theme.colors.BACKGROUND : theme.colors.FONT
+  )};
 `;
 
 const getMarkColorStyles = (props) => {

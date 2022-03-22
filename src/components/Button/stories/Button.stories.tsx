@@ -22,7 +22,7 @@ export const Button: ComponentStory<typeof ButtonComp> = (args) => (
 Button.args = {
   label: 'Test Button',
   variant: 'fill',
-  color: 'brand',
+  color: 'font',
   type: 'button',
 };
 

@@ -34,7 +34,7 @@ export const withThemeProvider = (Story, context) => {
   const palette = getPalette(theme, backgrounds?.value);
 
   return (
-    <Configuration palette={palette}>
+    <Configuration palette={palette} locale="es">
       <Story {...context} />
     </Configuration>
   )

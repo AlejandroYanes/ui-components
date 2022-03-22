@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import { SpinningDots } from 'components/Loaders';
+import RenderIf from 'components/RenderIf';
 import { LoadingLayer, Text, IconWrapper } from './styled';
 
 interface Props {
@@ -36,9 +37,11 @@ const Content: FunctionComponent<Props> = (props) => {
         <IconWrapper show={!loading}>
           {rightIcon}
         </IconWrapper>
-        <LoadingLayer data-testid="button-loading" show={loading}>
-          <SpinningDots size="x-small" color={spinnerColors as any} />
-        </LoadingLayer>
+        <RenderIf condition={loading}>
+          <LoadingLayer data-testid="button-loading" show={loading}>
+            <SpinningDots size="x-small" color={spinnerColors as any} />
+          </LoadingLayer>
+        </RenderIf>
       </>
     );
   }

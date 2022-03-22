@@ -2,10 +2,11 @@ import React, { FunctionComponent, ReactNode, useMemo } from 'react';
 import { formatDate, formatDateTime, formatTime } from 'helpers';
 import RenderIf from 'components/RenderIf';
 import { Text } from 'components/Typography';
+import { useAppLocale } from 'components/Configuration';
 import AbsoluteContent from '../base/AbsoluteContent';
+import { CalendarIcon, ClockIcon } from 'components/Icons';
 import { Separator, StyledContent } from './styled/content';
 import ClearButton from '../base/ClearButton';
-import { CalendarIcon, ClockIcon } from '../../Icons';
 
 interface Props {
   value: Date | Date[];
@@ -25,16 +26,17 @@ interface Props {
 function getDateString(
   date: Date,
   type: Props['type'],
+  locale: string,
 ) {
   switch (type) {
     case 'date':
     case 'date-range':
-      return formatDate(date);
+      return formatDate(date, locale);
     case 'time':
     case 'time-range':
-      return formatTime(date);
+      return formatTime(date, locale);
     default:
-      return formatDateTime(date);
+      return formatDateTime(date, locale);
   }
 }
 
@@ -49,6 +51,7 @@ function getIcon(type: Props['type']) {
 }
 
 const Content: FunctionComponent<Props> = (props) => {
+  const locale = useAppLocale();
   const {
     type,
     value,
@@ -67,7 +70,7 @@ const Content: FunctionComponent<Props> = (props) => {
   const startDate = useMemo(() => {
     if (value) {
       const date = useRange ? value[0] : value;
-      return getDateString(date, type);
+      return getDateString(date, type, locale);
     }
 
     return undefined;
@@ -76,7 +79,7 @@ const Content: FunctionComponent<Props> = (props) => {
   const endDate = useMemo(() => {
     if (value && useRange) {
       const date = value[1];
-      return getDateString(date, type);
+      return getDateString(date, type, locale);
     }
 
     return undefined;

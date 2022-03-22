@@ -2,12 +2,13 @@ import React, { FunctionComponent, ReactNode, useCallback } from 'react';
 import RenderIf from 'components/RenderIf';
 import { Text } from 'components/Typography';
 import { useOptionsContext } from './context';
-import { Label, Mark, Option as StyledOption } from './styled/option';
+import { Label, Mark, Segment as StyledSegment } from './styled/segment';
 
 interface Props {
   value: any;
   label: string;
   icon?: ReactNode;
+  disabled?: boolean;
 }
 
 const spring = {
@@ -16,7 +17,7 @@ const spring = {
   damping: 20,
 };
 
-const Option: FunctionComponent<Props> = (props) => {
+const Segment: FunctionComponent<Props> = (props) => {
   const { value, label, icon = null } = props;
   const {
     color,
@@ -32,7 +33,7 @@ const Option: FunctionComponent<Props> = (props) => {
   }, [value, onChange]);
 
   return (
-    <StyledOption
+    <StyledSegment
       role="button"
       tabIndex={0}
       size={size}
@@ -40,7 +41,7 @@ const Option: FunctionComponent<Props> = (props) => {
       fullWidth={fullWidth}
       onClick={handleOnClick}
     >
-      <Label>
+      <Label isSelected={isSelected}>
         <RenderIf condition={!!icon}>
           {icon}
         </RenderIf>
@@ -61,8 +62,8 @@ const Option: FunctionComponent<Props> = (props) => {
           data-el="option-mark"
         />
       </RenderIf>
-    </StyledOption>
+    </StyledSegment>
   );
 };
 
-export default Option;
+export default Segment;

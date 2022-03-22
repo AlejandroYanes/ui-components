@@ -122,7 +122,6 @@ export {
   BasketballIcon,
   BellIcon,
   BellSlashIcon,
-  BookmarkCheckedIcon,
   BookmarkFilledIcon,
   BookIcon,
   BookmarkAddIcon,

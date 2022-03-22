@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { AnimateSharedLayout } from 'framer-motion';
 import { PositionProps } from 'helpers';
 import { OptionsProvider } from './context';
-import { Options as StyledOptions } from './styled/options';
+import { Segments as StyledSegments } from './styled/segments';
 
 interface Props extends PositionProps {
   value: any;
@@ -11,11 +11,11 @@ interface Props extends PositionProps {
   color?: 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error';
 }
 
-const Options: FunctionComponent<Props> = (props) => {
+const Segments: FunctionComponent<Props> = (props) => {
   const { value, onChange, color, size, fullWidth, children, ...rest } = props;
 
   return (
-    <StyledOptions color={color} {...rest} data-el="options-wrapper">
+    <StyledSegments color={color} {...rest} data-el="options-wrapper">
       <OptionsProvider
         value={value}
         onChange={onChange}
@@ -27,13 +27,13 @@ const Options: FunctionComponent<Props> = (props) => {
           {children}
         </AnimateSharedLayout>
       </OptionsProvider>
-    </StyledOptions>
+    </StyledSegments>
   );
 };
 
-Options.defaultProps = {
+Segments.defaultProps = {
   color: 'brand',
   size: 'medium',
 };
 
-export default Options;
+export default Segments;

@@ -5,7 +5,7 @@ import {
   getPositionStyles,
 } from 'helpers';
 
-export const Options = styled.ul`
+export const Segments = styled.ul`
   list-style: none;
   display: flex;
   padding: 4px;

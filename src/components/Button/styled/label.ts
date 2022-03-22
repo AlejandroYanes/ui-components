@@ -12,6 +12,11 @@ export const Text = styled.span.attrs(anyPropsAttrs)`
 
 export const IconWrapper = styled.span`
   opacity: ${({ show }) => show ? 1 : 0};
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const LoadingLayer = styled.div.attrs(anyPropsAttrs)`

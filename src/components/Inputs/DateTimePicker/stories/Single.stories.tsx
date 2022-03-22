@@ -25,7 +25,12 @@ export const SingleDateTime: ComponentStory<typeof DateTimePickerComp> = (args) 
   const [value, setValue] = useState(new Date());
 
   return (
-    <DateTimePickerComp {...args} value={value} onChange={setValue} />
+    <DateTimePickerComp
+      {...args}
+      style={{ minWidth: '200px' }}
+      value={value}
+      onChange={setValue}
+    />
   );
 }
 
