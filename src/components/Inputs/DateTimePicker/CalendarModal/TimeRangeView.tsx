@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Layout } from 'components/Configuration';
+import { Layout, useAppLocale } from 'components/Configuration';
 import Clock from 'components/Clock';
 import FlexBox from 'components/FlexBox';
 import { Tab, Tabset } from 'components/Tabset';
@@ -7,10 +7,12 @@ import RenderByLayout from 'components/RenderByLayout';
 import { Button } from 'components/Button';
 import { Footer } from './styled';
 import { ViewProps } from './type';
+import { translations } from './translations';
 
 const PrimaryRender = (props: ViewProps) => {
   const { value, onChange, onClose } = props;
   const [times, setTimes] = useState(value);
+  const locale = useAppLocale();
 
   const handleStartChange = (startTime) => {
     setTimes([startTime, times[1]]);
@@ -25,20 +27,20 @@ const PrimaryRender = (props: ViewProps) => {
   return (
     <>
       <FlexBox>
-        <Clock value={value[0]} onChange={handleStartChange} />
-        <Clock value={value[1]} onChange={handleEndChange} />
+        <Clock value={times[0]} onChange={handleStartChange} />
+        <Clock value={times[1]} onChange={handleEndChange} />
       </FlexBox>
       <Footer>
         <Button
           onClick={onClose}
-          label="Cancel"
-          color="background"
-          variant="fill"
+          label={translations[locale].cancelButton}
+          color="brand"
+          variant="outline"
           mR
         />
         <Button
           variant="fill"
-          label="Select"
+          label={translations[locale].acceptButton}
           onClick={sendDateSelected}
         />
       </Footer>
@@ -50,6 +52,7 @@ const MobileRender = (props: ViewProps) => {
   const { value, onChange, onClose } = props;
   const [times, setTimes] = useState(value);
   const [index, setIndex] = useState('0');
+  const locale = useAppLocale();
 
   const handleChange = (nextTime) => {
     const parsedIndex = parseInt(index);
@@ -61,21 +64,21 @@ const MobileRender = (props: ViewProps) => {
   return (
     <>
       <Tabset activeTab={index} onTabChange={setIndex} fullWidth mB>
-        <Tab name="0" label="Start" />
-        <Tab name="1" label="End" />
+        <Tab name="0" label={translations[locale].timeRange.start} />
+        <Tab name="1" label={translations[locale].timeRange.end} />
       </Tabset>
       <Clock value={value[parseInt(index)]} onChange={handleChange} />
       <Footer>
         <Button
           onClick={onClose}
-          label="Cancel"
-          color="background"
-          variant="fill"
+          label={translations[locale].cancelButton}
+          color="brand"
+          variant="outline"
           mR
         />
         <Button
           variant="fill"
-          label="Select"
+          label={translations[locale].acceptButton}
           onClick={sendDateSelected}
         />
       </Footer>

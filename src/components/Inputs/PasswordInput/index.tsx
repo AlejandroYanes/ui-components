@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import { getEventValue } from 'helpers';
 import { IconButton } from 'components/Button';
+import { LockIcon, UnlockIcon } from 'components/Icons';
 import AbsoluteContent from '../base/AbsoluteContent';
 import InputLabel from '../base/Label';
 import InputIcon from '../base/Icon';
@@ -19,6 +20,7 @@ const PasswordInput: FunctionComponent<InputProps> = (props) => {
     onBlur,
     required,
     error,
+    disabled,
     ...rest
   } = props;
   const [showPassword, setShowPassword] = useState(false);
@@ -31,10 +33,14 @@ const PasswordInput: FunctionComponent<InputProps> = (props) => {
     setShowPassword(old => !old);
   }, []);
 
+  const lockIcon = showPassword
+    ? <UnlockIcon width={14} height={14} />
+    : <LockIcon width={14} height={14} />;
+
   return (
-    <StyledContainer {...rest} data-el="input-wrapper">
-      <InputLabel text={label} required={required} />
-      <InputIcon icon={icon} topSpaced />
+    <StyledContainer {...rest} disabled={disabled} data-el="input-wrapper">
+      <InputLabel text={label} required={required} disabled={disabled} />
+      <InputIcon icon={icon} disabled={disabled} topSpaced={!!label} />
       <StyledInput
         type={showPassword ? 'text' : 'password'}
         padRight
@@ -48,8 +54,9 @@ const PasswordInput: FunctionComponent<InputProps> = (props) => {
       />
       <AbsoluteContent topSpaced floatRight>
         <IconButton
+          disabled={disabled}
           onClick={toggleShowPassword}
-          icon={showPassword ? 'UNLOCK' : 'LOCK'}
+          icon={lockIcon}
           color="background"
           size="small"
         />

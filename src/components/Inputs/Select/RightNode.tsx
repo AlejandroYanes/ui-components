@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { Spring, Variants } from 'framer-motion';
-import SvgIcon from 'components/SvgIcon';
 import { SpinningDots } from 'components/Loaders';
+import { ChevronDownIcon } from 'components/Icons';
 import AbsoluteContent from '../base/AbsoluteContent';
 import ClearButton from '../base/ClearButton';
-import { IconBox } from './styled';
+import { IconBox } from './styled/right-node';
 import { SelectOption } from './';
 
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
   isOpen: boolean;
   showClear: boolean;
   multiple: boolean;
+  disabled?: boolean;
   value: SelectOption | SelectOption[];
   onChange: (event) => void;
 }
@@ -43,6 +44,7 @@ const RightNode: FunctionComponent<Props> = (props) => {
     multiple,
     value,
     onChange,
+    disabled,
   } = props;
 
   const hasValue = (
@@ -51,10 +53,10 @@ const RightNode: FunctionComponent<Props> = (props) => {
   );
   const showClearBtn = isHovered && showClear && hasValue;
 
-  if (isLoading) {
+  if (!disabled && isLoading) {
     return (
       <AbsoluteContent floatRight>
-        <SpinningDots size="x-small" margin="0 6px" />
+        <SpinningDots size="x-small" margin="0 6px" color="FONT" />
       </AbsoluteContent>
     );
   }
@@ -76,7 +78,7 @@ const RightNode: FunctionComponent<Props> = (props) => {
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
       >
-        <SvgIcon icon="CHEVRON_DOWN" width={18} />
+        <ChevronDownIcon width={18} height={18} />
       </IconBox>
     </AbsoluteContent>
   );

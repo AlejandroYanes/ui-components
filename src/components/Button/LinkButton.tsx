@@ -1,12 +1,10 @@
 import { FunctionComponent } from 'react';
-import { PositionProps } from 'helpers';
 import { StyledLink } from './styled';
+import { CommonButtonProps } from './types';
 
-interface Props extends PositionProps {
+interface Props extends Omit<CommonButtonProps, 'onClick'> {
   to: string;
   label?: string;
-  variant?: 'text' | 'flat' | 'outline' | 'fill';
-  color?: 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error' | 'background';
   sm?: boolean;
 }
 

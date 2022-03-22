@@ -3,11 +3,11 @@ import { getShade } from 'helpers/color-attrs';
 export type Palette = {
   BRAND: string;
   ACCENT: string;
-  SUCCESS: string;
-  INFO: string;
-  WARNING: string;
-  ERROR: string;
   BACKGROUND: string;
+  SUCCESS?: string;
+  INFO?: string;
+  WARNING?: string;
+  ERROR?: string;
 }
 
 export type BasicScheme = Exclude<Palette, { FONT: string }>;
@@ -82,8 +82,8 @@ export const fixedColors: FixedColorScheme = {
 };
 
 export const basicColors = {
-  INFO: '#1e6ff5',
-  SUCCESS: '#017f23',
+  INFO: '#1867ea',
+  SUCCESS: '#017f4a',
   WARNING: '#db5f01',
   ERROR: '#e52111',
 };

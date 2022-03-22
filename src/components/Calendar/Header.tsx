@@ -1,9 +1,11 @@
 import React, { FunctionComponent, useMemo } from 'react';
 import { Button, IconButton } from 'components/Button';
 import RenderIf from 'components/RenderIf';
-import { monthFormatter, monthYearFormatter, yearFormatter } from './utils';
 import { DateElement } from './types';
 import { StyledHeader } from './styled/header';
+import { ChevronLeftIcon, ChevronRightIcon } from '../Icons';
+import { useAppLocale } from '../Configuration';
+import { capitalizeFirstLetter } from '../../helpers';
 
 interface Props {
   currentDate: Date;
@@ -24,12 +26,26 @@ const Header: FunctionComponent<Props> = (props) => {
     onSelectNext: selectNext,
     onSelectPrevious: selectPrevious,
   } = props;
+  const locale = useAppLocale();
 
   const label = useMemo(() => {
+    const monthYearFormatter = new Intl.DateTimeFormat(locale, {
+      month: 'long',
+      year: 'numeric',
+    });
+    const monthFormatter = new Intl.DateTimeFormat(locale, {
+      month: 'long',
+    });
+    const yearFormatter = new Intl.DateTimeFormat('default', {
+      year: 'numeric',
+    });
+
     if (selecting === DateElement.Day) {
-      return currentDate.getFullYear() === today.getFullYear()
-        ? monthFormatter.format(currentDate)
-        : monthYearFormatter.format(currentDate);
+      return capitalizeFirstLetter(
+        currentDate.getFullYear() === today.getFullYear()
+          ? monthFormatter.format(currentDate)
+          : monthYearFormatter.format(currentDate)
+      );
     }
 
     if (selecting === DateElement.Month || selecting === DateElement.Year) {
@@ -46,7 +62,7 @@ const Header: FunctionComponent<Props> = (props) => {
       <RenderIf condition={selectingDay}>
         <IconButton
           onClick={selectPrevious}
-          icon="CHEVRON_LEFT"
+          icon={<ChevronLeftIcon />}
           color="background"
           variant="fill"
         />
@@ -63,7 +79,7 @@ const Header: FunctionComponent<Props> = (props) => {
       <RenderIf condition={selectingDay}>
         <IconButton
           onClick={selectNext}
-          icon="CHEVRON_RIGHT"
+          icon={<ChevronRightIcon />}
           color="background"
           variant="fill"
         />

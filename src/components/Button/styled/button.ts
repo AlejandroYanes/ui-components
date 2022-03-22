@@ -50,17 +50,17 @@ export const Button = styled.button.attrs(anyPropsAttrs)`
   cursor: pointer;
   flex-shrink: 0;
   position: relative;
-  transition: all linear 150ms;
+  transition: all linear 100ms;
   ${getSize};
   ${getAlignment};
   ${getVariantStyles};
   ${getPositionStyles};
 
   &:active {
-    transform: scale(0.9);
+    transform: translateY(1px);
   }
 
   & > svg * {
-    transition: all linear 150ms;
+    transition: all linear 100ms;
   }
 `;

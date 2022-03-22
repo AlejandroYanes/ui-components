@@ -31,3 +31,8 @@ yarn.lock
 .vs/VSWorkspaceState.json
 .vs/ProjectSettings.json
 .env.local
+
+#storybook
+dist/
+build-storybook.log
+storybook-static/

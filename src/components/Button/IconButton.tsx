@@ -1,25 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import { PositionProps } from 'helpers';
-import SvgIcon, { Icons } from 'components/SvgIcon';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { StyledIconButton } from './styled';
+import { CommonButtonProps, IconButtonSize } from './types';
 
-interface Props extends PositionProps {
-  icon: Icons;
-  variant?: 'text' | 'flat' | 'outline' | 'fill';
-  color?: (
-    'brand' |
-    'accent' |
-    'success' |
-    'info' |
-    'warning' |
-    'error' |
-    'font' |
-    'background'
-  );
-  size?: 'small' | 'medium' | 'large' | 'x-large';
-  onClick: (event) => void;
-  toggle?: boolean;
-  disabled?: boolean;
+interface Props extends CommonButtonProps {
+  icon: ReactNode;
+  size?: IconButtonSize;
 }
 
 const IconButton: FunctionComponent<Props> = (props) => {
@@ -39,7 +24,7 @@ const IconButton: FunctionComponent<Props> = (props) => {
       size={size}
       {...rest}
     >
-      <SvgIcon icon={icon} size={size} />
+      {icon}
     </StyledIconButton>
   );
 };

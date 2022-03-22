@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { elementHeight, inputBorderRadius } from 'styles/variables';
 import { anyPropsAttrs } from 'helpers';
-import { getColorStyles } from '../../Input/styled/input';
 
-const getLeftPadding = (props) => `${props.paddLeft ? 52 : 20}px`;
+const getLeftPadding = (props) => `${props.paddLeft ? 48 : 20}px`;
 
 export const Content = styled.div.attrs(anyPropsAttrs)`
   display: flex;
@@ -20,7 +19,6 @@ export const Content = styled.div.attrs(anyPropsAttrs)`
   height: ${elementHeight};
   border-radius: ${inputBorderRadius};
   padding: 8px 48px 8px ${getLeftPadding};
-  ${getColorStyles};
 `;
 
 export const TrayContainer = styled.div`

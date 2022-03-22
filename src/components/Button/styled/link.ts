@@ -21,7 +21,6 @@ const getHeightStyles = (props) => {
 };
 
 export const StyledLink = styled(Link)`
-  font-family: Roboto-Bold, sans-serif;
   text-decoration: none;
   border: none;
   outline: none;
@@ -39,6 +38,6 @@ export const StyledLink = styled(Link)`
   ${getPositionStyles};
 
   &:active {
-    transform: scale(0.9);
+    transform: translateY(1px);
   }
 `;

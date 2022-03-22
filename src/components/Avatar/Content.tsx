@@ -43,7 +43,7 @@ const Content: FunctionComponent<Props> = (props) => {
 
   if (showDrawnAvatar) {
     const SelectedUser = users[src];
-    return <SelectedUser />;
+    return <SelectedUser data-testid="svg-user" />;
   }
 
   return null;

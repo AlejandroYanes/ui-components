@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useCallback } from 'react';
 import RenderIf from 'components/RenderIf';
-import SvgIcon from 'components/SvgIcon';
+import SvgIcon from '../Icons';
 import { usePickListContext } from './context';
 import { StyledItem, Touchable } from './styled/item';
 import AbsoluteContent from '../AbsoluteContent';

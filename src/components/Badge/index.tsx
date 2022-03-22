@@ -1,13 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { PositionProps } from 'helpers';
-import { Icons } from 'components/SvgIcon';
 import RenderIf from 'components/RenderIf';
-import { Icon, StyledBadge } from './styled';
+import { StyledBadge } from './styled';
 
 export interface BadgeProps extends PositionProps {
   color: 'brand' | 'accent' | 'info' | 'success' | 'warning' | 'error' | 'light';
   label?: string;
-  icon?: Icons;
+  icon?: ReactNode;
   sm?: boolean;
   asButton?: boolean;
 }
@@ -16,7 +15,7 @@ const Badge: FunctionComponent<BadgeProps> = (props) => {
   const {
     label,
     color,
-    icon,
+    icon = null,
     sm,
     children,
     ...rest
@@ -26,11 +25,7 @@ const Badge: FunctionComponent<BadgeProps> = (props) => {
     <RenderIf condition={!!children || !!label}>
       <StyledBadge color={color} sm={sm} {...rest}>
         <RenderIf condition={!children} fallback={children}>
-          <Icon
-            size={sm ? 'small' : 'medium'}
-            icon={icon}
-            color={color === 'light' ? 'FONT' : 'WHITE'}
-          />
+          {icon}
           <label>{label}</label>
         </RenderIf>
       </StyledBadge>

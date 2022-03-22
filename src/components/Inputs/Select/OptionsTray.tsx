@@ -9,8 +9,8 @@ import {
 import RenderIf from 'components/RenderIf';
 import { SpinningDots } from 'components/Loaders';
 import Search from './Search';
-import Option from './Option';
-import { Edge, OptionsList, StyledOptionsTray } from './styled';
+import OptionItem from './OptionItem';
+import { Edge, OptionsList, StyledOptionsTray } from './styled/tray';
 import getFloatingStyles from './get-floating-styles';
 import { SelectOption } from './';
 
@@ -53,7 +53,7 @@ const OptionsTray: FunctionComponent<Props> = (props) => {
         :option.value === value?.value;
 
       return (
-        <Option
+        <OptionItem
           key={option.value}
           option={option}
           isSelected={isSelected}
@@ -97,7 +97,7 @@ const OptionsTray: FunctionComponent<Props> = (props) => {
         </OptionsList>
         <Edge>
           <RenderIf condition={isLoading}>
-            <SpinningDots size="small" margin="10px 0" />
+            <SpinningDots size="small" margin="10px 0" color="FONT" />
           </RenderIf>
         </Edge>
       </StyledOptionsTray>

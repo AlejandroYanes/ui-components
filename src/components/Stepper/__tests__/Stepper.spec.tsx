@@ -1,4 +1,4 @@
-import { mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import TestWrapper from 'components/TestWrapper';
 import { Text } from 'components/Typography';
 import Stepper from '../index';
@@ -10,21 +10,20 @@ describe('Stepper base component', () => {
     onChangeMock.mockClear();
   });
 
-  it('should render the content of the active step', () => {
-    const stepper = mount(
+  it('should render the content of the active step', async() => {
+    const { findByTestId } = render(
       <TestWrapper component={Stepper} activeStep={1} onChange={onChangeMock}>
         <Text>content 1</Text>
         <Text>content 2</Text>
         <Text>content 3</Text>
       </TestWrapper>
     );
-
-    const content = stepper.find('main[data-el="stepper-content"]').text();
-    expect(content).toBe('content 2');
+    const content = await findByTestId('stepper-content');
+    expect(content).toHaveTextContent('content 2');
   });
 
-  it('should render the content of the active step when the step changes', () => {
-    const stepper = mount(
+  it('should render the content of the active step when the step changes', async () => {
+    const { findByTestId, rerender } = render(
       <TestWrapper component={Stepper} activeStep={1} onChange={onChangeMock}>
         <Text>content 1</Text>
         <Text>content 2</Text>
@@ -32,12 +31,22 @@ describe('Stepper base component', () => {
       </TestWrapper>
     );
 
-    const firstContent = stepper.find('main[data-el="stepper-content"]').text();
-    stepper.find('button[data-el="stepper-step-2"]').simulate('click');
-    stepper.setProps({ activeStep: 0 });
-    const updatedContent = stepper.find('main[data-el="stepper-content"]').text();
+    const firstContent = (await findByTestId('stepper-content')).textContent;
+    const step2 = await findByTestId('stepper-step-2');
+    fireEvent.click(step2);
+
+    rerender(
+      <TestWrapper component={Stepper} activeStep={2} onChange={onChangeMock}>
+        <Text>content 1</Text>
+        <Text>content 2</Text>
+        <Text>content 3</Text>
+      </TestWrapper>
+    );
+
+    const updatedContent = (await findByTestId('stepper-content')).textContent;
+
     expect(onChangeMock).toHaveBeenCalledWith(2);
     expect(firstContent).not.toBe(updatedContent);
-    expect(updatedContent).toBe('content 1');
+    expect(updatedContent).toBe('content 3');
   });
 });

@@ -5,51 +5,47 @@ import {
   differenceInMonths,
 } from 'date-fns';
 
-const dateFormatter = new Intl.DateTimeFormat('default', {
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric',
-});
-
-export function formatDate(date: Date): string {
+export function formatDate(date: Date, locale = 'default'): string {
+  const dateFormatter = new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
   return date ? dateFormatter.format(date) : undefined;
 }
 
-const timeFormatter = new Intl.DateTimeFormat('default', {
-  hour12: true,
-  hour: 'numeric',
-  minute: 'numeric',
-});
-
-export function formatTime(date: Date): string {
+export function formatTime(date: Date, locale = 'default'): string {
+  const timeFormatter = new Intl.DateTimeFormat(locale, {
+    hour12: true,
+    hour: 'numeric',
+    minute: 'numeric',
+  });
   return date ? timeFormatter.format(date) : undefined;
 }
 
-const dateTimeFormatter = new Intl.DateTimeFormat('default', {
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
-});
-
-export function formatDateTime(date: Date | string): string {
+export function formatDateTime(date: Date | string, locale = 'default'): string {
+  const dateTimeFormatter = new Intl.DateTimeFormat(locale, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  });
   return date ? dateTimeFormatter.format(new Date(date)) : undefined;
 }
 
-const shortDateFormatter = new Intl.DateTimeFormat(undefined, {
-  day: 'numeric',
-  month: 'short',
-  year: '2-digit',
-});
-
-const shorterDateFormatter = new Intl.DateTimeFormat(undefined, {
-  day: 'numeric',
-  month: 'short',
-});
-
-export function formatShortDate(date: Date): string {
+export function formatShortDate(date: Date, locale = 'default'): string {
   if (date) {
+    const shorterDateFormatter = new Intl.DateTimeFormat(locale, {
+      day: 'numeric',
+      month: 'short',
+    });
+    const shortDateFormatter = new Intl.DateTimeFormat(locale, {
+      day: 'numeric',
+      month: 'short',
+      year: '2-digit',
+    });
     const isForThisYear = date.getFullYear() === new Date().getFullYear();
     return isForThisYear
       ? shorterDateFormatter.format(date)
@@ -58,23 +54,22 @@ export function formatShortDate(date: Date): string {
   return undefined;
 }
 
-const monthFormatter = new Intl.DateTimeFormat('default', {
-  month: 'long',
-});
-
-export function getMonthName(date: Date): string {
+export function getMonthName(date: Date, locale = 'default'): string {
+  const monthFormatter = new Intl.DateTimeFormat(locale, {
+    month: 'long',
+  });
   return date ? monthFormatter.format(date) : undefined;
 }
 
-export function getMonthLabel(date: Date) {
+export function getMonthLabel(date: Date, locale = 'default') {
   const today = new Date();
 
   if (date.getFullYear() === today.getFullYear()) {
-    return getMonthName(date).slice(0, 3);
+    return getMonthName(date, locale).slice(0, 3);
   }
 
   const year = date.getFullYear().toString(10).slice(-2);
-  return `${getMonthName(date).slice(0, 3)}/${year}`;
+  return `${getMonthName(date, locale).slice(0, 3)}/${year}`;
 }
 
 function resolveTimeUnit(date: Date, targetDate: Date) {
@@ -100,12 +95,15 @@ function resolveTimeUnit(date: Date, targetDate: Date) {
   return { unit: 'equal' };
 }
 
-const relativeTimeFormatter = new Intl.RelativeTimeFormat('default', {
-  style: 'long',
-  numeric: 'auto',
-});
-
-export function getRelativeTime(fromDate:Date | string, relativeTo?: Date | string) {
+export function getRelativeTime(
+  fromDate:Date | string,
+  relativeTo?: Date | string,
+  locale = 'default',
+) {
+  const relativeTimeFormatter = new Intl.RelativeTimeFormat(locale, {
+    style: 'long',
+    numeric: 'auto',
+  });
   const { unit, diff } = resolveTimeUnit(
     new Date(fromDate),
     relativeTo ? new Date(relativeTo) : new Date(),

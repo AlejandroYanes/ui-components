@@ -1,9 +1,8 @@
 import React, { FunctionComponent, ReactNode, } from 'react';
-import { Icons } from 'components/SvgIcon';
 
 export interface TabsProps {
   name: string;
-  icon?: Icons | ReactNode;
+  icon?: ReactNode;
   label?: string;
   onClick?: (activeTab: string) => void;
 }

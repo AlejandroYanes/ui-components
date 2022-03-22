@@ -1,19 +1,28 @@
 /* eslint-disable react/no-array-index-key */
 import React, { FunctionComponent, useMemo } from 'react';
-import { arePropsEqual } from 'helpers';
+import { arePropsEqual, capitalizeFirstLetter } from 'helpers';
 import { useUniqueIds } from 'hooks/UI';
 import { daysOfTheWeek } from './types';
 import { DayContext, resolveWeeks } from './utils';
 import { StyledDays, StyledWeekDay } from './styled/days';
 import Day from './Day';
+import { useAppLocale } from '../Configuration';
 
-const dayFormatter = new Intl.DateTimeFormat('default', {
-  weekday: 'short',
-});
+const WeekDays = (): any => {
+  const locale = useAppLocale();
+  const dayFormatter = new Intl.DateTimeFormat(locale, {
+    weekday: 'short',
+  });
+  const days = daysOfTheWeek.map((d) => (
+    <StyledWeekDay key={d.getTime()}>
+      {capitalizeFirstLetter(dayFormatter.format(d))}
+    </StyledWeekDay>
+  ));
 
-const WeekDays = (): any => daysOfTheWeek.map((d) => (
-  <StyledWeekDay key={d.getTime()}>{dayFormatter.format(d)}</StyledWeekDay>
-));
+  return (
+    <>{days}</>
+  );
+}
 
 const Week = ({ week }): any => (
   <tr>

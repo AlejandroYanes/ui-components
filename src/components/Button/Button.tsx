@@ -1,21 +1,14 @@
-import React, { FunctionComponent } from 'react';
-import { PositionProps } from 'helpers';
-import { Icons } from 'components/SvgIcon';
+import React, { FunctionComponent, ReactNode } from 'react';
 import Content from './Content';
 import { Button as StyledButton } from './styled';
+import { CommonButtonProps } from './types';
 
-export interface ButtonProps extends PositionProps {
-  id?: string;
+export interface ButtonProps extends CommonButtonProps {
   label?: string;
-  onClick: (event) => void;
-  leftIcon?: Icons;
-  rightIcon?: Icons;
-  type?: 'button' | 'submit' | 'reset';
-  variant?: 'text' | 'flat' | 'outline' | 'fill';
-  color?: 'brand' | 'accent' | 'success' | 'info' | 'warning' | 'error' | 'background';
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   align?: 'start' | 'center' | 'end';
   loading?: boolean;
-  disabled?: boolean;
   sm?: boolean;
 }
 
@@ -30,6 +23,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
     variant,
     color,
     sm,
+    children,
     ...rest
   } = props;
 
@@ -41,6 +35,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
 
   return (
     <StyledButton
+      data-testid="button"
       onClick={handleOnClick}
       disabled={disabled}
       variant={variant}
@@ -49,14 +44,15 @@ const Button: FunctionComponent<ButtonProps> = (props) => {
       {...rest}
     >
       <Content
-        sm={sm}
         label={label}
         color={color}
         variant={variant}
         loading={loading}
         leftIcon={leftIcon}
         rightIcon={rightIcon}
-      />
+      >
+        {children}
+      </Content>
     </StyledButton>
   );
 };

@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { Variations } from 'styles/colors';
 import { elementHeight } from 'styles/variables';
 import { getColorVariation, getEllipsisStyles, getPositionStyles } from 'helpers';
-import SvgIcon from 'components/SvgIcon';
 
 function resolveFontColor(props) {
   const { color, theme: { colors } } = props;
@@ -39,14 +38,12 @@ function resolveButtonStyles(props) {
         height: 28px;
         border-radius: 100px;
         padding: 0 18px;
-        font-family: Roboto-Bold, sans-serif;
       `
       : css`
         min-width: ${elementHeight};
         height: ${elementHeight};
         border-radius: 100px;
         padding: 0 18px;
-        font-family: Roboto-Bold, sans-serif;
       `;
   }
 
@@ -59,14 +56,15 @@ export const StyledBadge = styled.div.attrs((props: any) => props)`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   font-size: ${resolveSize};
   color: ${resolveFontColor};
   background-color: ${resolveBackgroundColor};
   ${resolveButtonStyles};
   ${getPositionStyles};
   ${getEllipsisStyles};
-`;
 
-export const Icon = styled(SvgIcon)`
-  margin-right: 4px;
+  & svg {
+    margin-right: 4px;
+  }
 `;

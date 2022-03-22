@@ -15,12 +15,12 @@ const Label: FunctionComponent<Props> = (props) => {
 
   if (label) {
     return (
-      <Text ellipsis weight="bold">{`${label} ${text}`}</Text>
+      <Text ellipsis weight="bold" color="current">{`${label} ${text}`}</Text>
     );
   }
 
   return (
-    <Text ellipsis>{text}</Text>
+    <Text color="current" ellipsis>{text}</Text>
   );
 };
 
