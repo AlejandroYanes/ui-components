@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
 import React, { FunctionComponent } from 'react';
 import { IconProps } from './types/icon-props';
+import { useAppColors } from 'components/Configuration';
 
 const ErrorIcon: FunctionComponent<IconProps> = (props) => {
   const { color = 'currentcolor', height = 24, width = 24, className, style } = props;
+  const colors = useAppColors();
 
   return (
     <svg
@@ -11,7 +13,7 @@ const ErrorIcon: FunctionComponent<IconProps> = (props) => {
       style={style}
       height={height}
       width={width}
-      fill={color}
+      fill={colors[color] || color}
       viewBox="0 0 16 16"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

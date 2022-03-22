@@ -11,6 +11,7 @@ import { IconButton } from 'components/Button';
 import { Edge, StyledListContainer, Wrapper } from './styled/list-container';
 import { StyledList } from './styled/list';
 import { PickListProps } from './PickList';
+import { ChevronLeftIcon, ChevronRightIcon } from '../Icons';
 
 const sizeMap = { large: 210, medium: 160, small: 110 };
 
@@ -46,9 +47,9 @@ const ListContainer: FunctionComponent<PickListProps> = (props) => {
         <Edge side="left" data-el="pick_list-left_edge">
           <IconButton
             onClick={handleLeftEdgeClick}
-            icon="CHEVRON_LEFT"
+            icon={<ChevronLeftIcon />}
             variant="flat"
-            color="background"
+            color="font"
           />
         </Edge>
       </RenderIf>
@@ -61,9 +62,9 @@ const ListContainer: FunctionComponent<PickListProps> = (props) => {
         <Edge side="right" data-el="pick_list-right_edge">
           <IconButton
             onClick={handleRightEdgeClick}
-            icon="CHEVRON_RIGHT"
+            icon={<ChevronRightIcon />}
             variant="flat"
-            color="background"
+            color="font"
           />
         </Edge>
       </RenderIf>

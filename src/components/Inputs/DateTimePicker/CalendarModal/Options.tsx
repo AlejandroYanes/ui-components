@@ -8,9 +8,9 @@ import {
   startOfWeek,
 } from 'date-fns';
 import { generateUID } from 'helpers';
-import { Icons } from '../../../Icons';
 import { Button } from 'components/Button';
 import { Options as StyledOptions } from './styled';
+import { CalendarIcon } from '../../../Icons';
 
 const today = new Date();
 
@@ -19,37 +19,37 @@ const initialOptions = [
     key: generateUID(),
     label: 'Today',
     value: [today],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
   {
     key: generateUID(),
     label: 'Tomorrow',
     value: [addDays(today, 1)],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
   {
     key: generateUID(),
     label: 'This Week',
     value: [startOfWeek(today), endOfWeek(today)],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
   {
     key: generateUID(),
     label: 'Next Week',
     value: [startOfWeek(addDays(today, 7)), endOfWeek(addDays(today, 7))],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
   {
     key: generateUID(),
     label: 'This Month',
     value: [startOfMonth(today), endOfMonth(today)],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
   {
     key: generateUID(),
     label: 'Next Month',
     value: [startOfMonth(addMonths(today, 1)), endOfMonth(addMonths(today, 1))],
-    icon: 'CALENDAR',
+    icon: <CalendarIcon />,
   },
 ];
 
@@ -65,9 +65,9 @@ const Options: FunctionComponent<Props> = (props) => {
         key={key}
         onClick={() => onSelect(value)}
         label={label}
-        leftIcon={icon as Icons}
-        color="background"
-        variant="fill"
+        leftIcon={icon}
+        color="font"
+        variant="flat"
         align="start"
         mB
       />

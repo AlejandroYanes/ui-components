@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { cardWidth } from 'styles/variables';
-import { getFontColor } from 'helpers';
+import { getBgdColor } from 'helpers';
 import { Layout } from 'components/Configuration';
 
 const widthMap = {
-  [Layout.DESKTOP]: `width: calc(${cardWidth} / 1.6);`,
-  [Layout.TABLET]: `width: calc(${cardWidth} / 1.6);`,
-  [Layout.MOBILE]: 'width: 100%;',
+  [Layout.DESKTOP]: `320px;`,
+  [Layout.TABLET]: `320px`,
+  [Layout.MOBILE]: '100%;',
 };
 
 export const Notification = styled(motion.li)`
@@ -17,8 +16,9 @@ export const Notification = styled(motion.li)`
   display: flex;
   align-items: flex-start;
   box-sizing: border-box;
-  background-color: ${getFontColor};
-  ${({ theme: { layout } }) => widthMap[layout]};
+  background-color: ${getBgdColor};
+  border: 1px solid ${({ theme }) => theme.colors.GREY};
+  width: ${({ theme: { layout } }) => widthMap[layout]};
 
   &:last-child {
     margin-top: 32px;

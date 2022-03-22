@@ -5,7 +5,6 @@ import ChevronLeftIcon from './ChevronLeft';
 import ChevronRightIcon from './ChevronRight';
 import BellIcon from './Bell';
 import SettingsIcon from './Settings';
-import LogoutIcon from './Logout';
 import UserIcon from './User';
 import UsersIcon from './Users';
 import HeartIcon from './Heart';
@@ -16,7 +15,6 @@ import SuccessIcon from './Success';
 import InfoIcon from './Info';
 import WarningIcon from './Warning';
 import ErrorIcon from './Error';
-import GridIcon from './Grid';
 import CalendarIcon from './Calendar';
 import MapPinIcon from './MapPin';
 import ClockIcon from './Clock';
@@ -169,7 +167,6 @@ export {
   GridElementsIcon,
   InboxIcon,
   InfoIcon,
-  GridIcon,
   HeartBeatIcon,
   HeartFilledIcon,
   HeartIcon,
@@ -182,7 +179,6 @@ export {
   LockAccessIcon,
   LockCircleIcon,
   LockIcon,
-  LogoutIcon,
   MapPinIcon,
   MaximizeIcon,
   MegaphoneIcon,

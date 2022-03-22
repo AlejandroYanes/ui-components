@@ -33,7 +33,7 @@ export const getColorStyles = (props: StyledProps<InputProps>) => {
 
     & > div[data-el="date-time-picker-content"] {
       color: currentColor;
-      border: 1px solid ${colors.GRAY};
+      border: 1px solid ${colors.GREY};
       background-color: ${getBgdColor};
       &::selection {
         background-color: ${colors.BRAND};

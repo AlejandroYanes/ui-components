@@ -25,7 +25,7 @@ const ClearButton: FunctionComponent<Props> = (props) => {
         <IconButton
           onClick={clearInput}
           icon={<CloseIcon height={16} width={16} />}
-          color="background"
+          color="font"
           size="small"
         />
       </AbsoluteContent>

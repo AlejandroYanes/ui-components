@@ -31,7 +31,7 @@ const IconButton: FunctionComponent<Props> = (props) => {
 
 IconButton.defaultProps = {
   variant: 'flat',
-  color: 'background',
+  color: 'font',
   size: 'medium',
 };
 

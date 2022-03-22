@@ -1,23 +1,28 @@
 import React, { FunctionComponent } from 'react';
 import { NotificationType } from 'notifications';
-import SvgIcon, { Icons } from '../Icons';
+import {
+  CheckCircleIcon,
+  ExclamationOctagonIcon,
+  ExclamationTriangleIcon,
+  InfoCircleIcon
+} from 'components/Icons';
 
 interface Props {
   type: NotificationType;
 }
 
 const iconMap = {
-  [NotificationType.SUCCESS]: 'CHECK_CIRCLE',
-  [NotificationType.INFO]: 'INFO_CIRCLE',
-  [NotificationType.WARNING]: 'EXCLAMATION_TRIANGLE',
-  [NotificationType.ERROR]: 'EXCLAMATION_OCTAGON',
+  [NotificationType.SUCCESS]: <CheckCircleIcon color="SUCCESS" />,
+  [NotificationType.INFO]: <InfoCircleIcon color="INFO" />,
+  [NotificationType.WARNING]: <ExclamationTriangleIcon color="WARNING" />,
+  [NotificationType.ERROR]: <ExclamationOctagonIcon color="ERROR" />,
 };
 
 const Icon: FunctionComponent<Props> = (props) => {
   const { type } = props;
 
   return (
-    <SvgIcon size="large" icon={iconMap[type] as Icons} color={type} />
+    <>{iconMap[type]}</>
   );
 }
 

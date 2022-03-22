@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
 import React, { FunctionComponent } from 'react';
 import { IconProps } from './types/icon-props';
+import { useAppColors } from 'components/Configuration';
 
 const ResumeIcon: FunctionComponent<IconProps> = (props) => {
   const { color = 'currentcolor', height = 24, width = 24, className, style } = props;
+  const colors = useAppColors();
 
   return (
     <svg
@@ -22,10 +24,10 @@ const ResumeIcon: FunctionComponent<IconProps> = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle cx="18" cy="12.5" r="3.5" fill={color} />
+      <circle cx="18" cy="12.5" r="3.5" fill={colors[color] || color} />
       <path
         d="M18 17.5C15.2225 17.5 14.1594 19.2143 13.7524 20.5267C13.507 21.318 14.1716 22 15 22H21C21.8284 22 22.493 21.318 22.2476 20.5267C21.8406 19.2143 20.7775 17.5 18 17.5Z"
-        fill={color}
+        fill={colors[color] || color}
       />
       <path
         d="M7 6H14"

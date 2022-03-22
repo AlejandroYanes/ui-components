@@ -13,7 +13,6 @@ import {
   Variations,
 } from './colors';
 import {
-  cardWidth,
   elementBorderRadius,
   elementHeight,
   headerHeight,
@@ -37,7 +36,6 @@ export {
   BackgroundScheme,
   basicColors,
   Variations,
-  cardWidth,
   elementBorderRadius,
   elementHeight,
   headerHeight,

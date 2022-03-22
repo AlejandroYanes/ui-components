@@ -1,9 +1,11 @@
 /* eslint-disable max-len */
 import React, { FunctionComponent } from 'react';
 import { IconProps } from './types/icon-props';
+import { useAppColors } from 'components/Configuration';
 
 const TimeHistoryIcon: FunctionComponent<IconProps> = (props) => {
   const { color = 'currentcolor', height = 24, width = 24, className, style } = props;
+  const colors = useAppColors();
 
   return (
     <svg
@@ -19,7 +21,7 @@ const TimeHistoryIcon: FunctionComponent<IconProps> = (props) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M8 6H5.11409C7.04466 3.79137 9.15921 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12H1C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C8.78663 1 6.23708 1.91056 4 4.25645V1.99121H2V8H8V6ZM17 11H13V6H11V13H17V11Z"
-        fill={color}
+        fill={colors[color] || color}
       />
     </svg>
   );

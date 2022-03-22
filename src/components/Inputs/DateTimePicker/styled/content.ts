@@ -23,7 +23,7 @@ export const StyledContent = styled.div`
 export const Separator = styled.div<{ disabled: boolean }>`
   width: 1px;
   background-color: ${({ theme, disabled }) => (
-    disabled ? theme.colors.FONT_SHADE : theme.colors.GRAY
+    disabled ? theme.colors.FONT_SHADE : theme.colors.GREY
   )};
   height: 20px;
 `;

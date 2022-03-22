@@ -10,6 +10,7 @@ import { Text } from 'components/Typography';
 import RenderIf from 'components/RenderIf';
 import Icon from './Icon';
 import { Content, Notification as StyledNotification } from './styled/notification';
+import { CloseIcon } from '../Icons';
 
 interface Props extends NotificationModel {
   onClose: (id: string) => void;
@@ -65,15 +66,16 @@ const Notification: FunctionComponent<Props> = (props) => {
     >
       <Icon type={type} />
       <Content>
-        <Text color="background">{resolveTitle(title, type)}</Text>
+        <Text color="font">{resolveTitle(title, type)}</Text>
         <RenderIf condition={typeof message === 'string'} fallback={message}>
-          <Text color="background">{message}</Text>
+          <Text color="font">{message}</Text>
         </RenderIf>
       </Content>
       <IconButton
         color="font"
         variant="flat"
-        icon="CLOSE"
+        size="small"
+        icon={<CloseIcon width={14} height={14} />}
         onClick={handleOnClose}
       />
     </StyledNotification>
