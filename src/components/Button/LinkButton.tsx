@@ -20,7 +20,7 @@ const LinkButton: FunctionComponent<Props> = (props) => {
 
 LinkButton.defaultProps = {
   variant: 'text',
-  color: 'background',
+  color: 'font',
 };
 
 export default LinkButton;

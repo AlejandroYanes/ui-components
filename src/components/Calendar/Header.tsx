@@ -63,16 +63,16 @@ const Header: FunctionComponent<Props> = (props) => {
         <IconButton
           onClick={selectPrevious}
           icon={<ChevronLeftIcon />}
-          color="background"
-          variant="fill"
+          color="font"
+          variant="flat"
         />
       </RenderIf>
       <Button
         onClick={changeSelection}
         style={monthButtonStyles}
         label={label}
-        variant="fill"
-        color="background"
+        variant="flat"
+        color="font"
         mR
         mL
       />
@@ -80,8 +80,8 @@ const Header: FunctionComponent<Props> = (props) => {
         <IconButton
           onClick={selectNext}
           icon={<ChevronRightIcon />}
-          color="background"
-          variant="fill"
+          color="font"
+          variant="flat"
         />
       </RenderIf>
     </StyledHeader>

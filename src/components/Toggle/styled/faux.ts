@@ -4,8 +4,8 @@ import { anyPropsAttrs } from 'helpers';
 
 const getStyles = (props) => {
   const { checked, theme: { colors } } = props;
-  const baseColor = checked ? colors.ACCENT : colors.GRAY;
-  const focusColor = checked ? colors.ACCENT_HIGHLIGHT : colors.GRAY_DARK;
+  const baseColor = checked ? colors.ACCENT : colors.GREY;
+  const focusColor = checked ? colors.ACCENT_HIGHLIGHT : colors.GREY_DARK;
 
   return `
     justify-content: ${checked ? 'flex-end' : 'flex-start'};

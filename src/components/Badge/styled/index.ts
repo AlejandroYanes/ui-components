@@ -17,7 +17,7 @@ function resolveBackgroundColor(props) {
   const { color, theme: { colors } } = props;
 
   if (color === 'light') {
-    return colors.GRAY_SHADE;
+    return colors.GREY_SHADE;
   }
 
   return getColorVariation(colors, color, Variations.SHADE);

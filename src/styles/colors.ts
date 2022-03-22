@@ -44,10 +44,10 @@ export type BackgroundScheme = {
 export type FixedColorScheme  = {
   WHITE: string;
   WHITE_SHADE: string;
-  GRAY: string;
-  GRAY_LIGHT: string;
-  GRAY_DARK: string;
-  GRAY_SHADE: string;
+  GREY: string;
+  GREY_LIGHT: string;
+  GREY_DARK: string;
+  GREY_SHADE: string;
 }
 
 export type ColorScheme = (
@@ -75,10 +75,10 @@ export const darkStyleColors: LightColorScheme = {
 export const fixedColors: FixedColorScheme = {
   WHITE: '#ffffff',
   WHITE_SHADE: getShade('#ffffff', 0.05),
-  GRAY: '#6b6d76',
-  GRAY_LIGHT: '#AFAFAF',
-  GRAY_DARK: '#4a4b52',
-  GRAY_SHADE: getShade('#6b6d76'),
+  GREY: '#6b6d76',
+  GREY_LIGHT: '#AFAFAF',
+  GREY_DARK: '#4a4b52',
+  GREY_SHADE: getShade('#6b6d76'),
 };
 
 export const basicColors = {

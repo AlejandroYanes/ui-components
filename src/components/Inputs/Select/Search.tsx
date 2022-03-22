@@ -16,7 +16,7 @@ const Search: FunctionComponent<Props> = (props) => {
 
   return (
     <FlexBox align="center" padding="10px 16px 10px 32px" width="100%">
-      <SearchIcon color={isFocus ? 'BRAND_FONT' : 'GRAY'} />
+      <SearchIcon color={isFocus ? 'BRAND_FONT' : 'GREY'} />
       <StyledSearch
         ref={inputRef}
         type="text"

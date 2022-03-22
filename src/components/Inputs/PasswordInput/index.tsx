@@ -39,7 +39,7 @@ const PasswordInput: FunctionComponent<InputProps> = (props) => {
 
   return (
     <StyledContainer {...rest} disabled={disabled} data-el="input-wrapper">
-      <InputLabel text={label} required={required} disabled={disabled} />
+      <InputLabel text={label} required={required} />
       <InputIcon icon={icon} disabled={disabled} topSpaced={!!label} />
       <StyledInput
         type={showPassword ? 'text' : 'password'}
@@ -57,7 +57,7 @@ const PasswordInput: FunctionComponent<InputProps> = (props) => {
           disabled={disabled}
           onClick={toggleShowPassword}
           icon={lockIcon}
-          color="background"
+          color="font"
           size="small"
         />
       </AbsoluteContent>

@@ -11,6 +11,7 @@ import RenderIf from 'components/RenderIf';
 import { IconButton } from 'components/Button';
 import Days from './Days';
 import { Edge, List, ListContainer, Wrapper } from './styled';
+import { ChevronLeftIcon, ChevronRightIcon } from '../Icons';
 
 interface Props extends PositionProps {
   days: Date[];
@@ -52,8 +53,8 @@ const DayCalendar: FunctionComponent<Props> = (props) => {
         <RenderIf condition={showArrows}>
           <IconButton
             onClick={handleLeftEdgeClick}
-            icon="CHEVRON_LEFT"
-            color="background"
+            icon={<ChevronLeftIcon />}
+            color="font"
             variant="flat"
           />
         </RenderIf>
@@ -69,8 +70,8 @@ const DayCalendar: FunctionComponent<Props> = (props) => {
         <RenderIf condition={showArrows}>
           <IconButton
             onClick={handleRightEdgeClick}
-            icon="CHEVRON_RIGHT"
-            color="background"
+            icon={<ChevronRightIcon />}
+            color="font"
             variant="flat"
           />
         </RenderIf>
