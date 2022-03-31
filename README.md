@@ -1,5 +1,11 @@
-# Activate components
-A set of components crafted form scratch to be used in the [Activate](https://github.com/AlejandroYanes/activate) project
+# DevLand UI components
+A set of components crafted form scratch to be used in DevLand projects
+
+## Get Started
+Install the library with
+```
+npm i @devland-ui/components
+```
 
 ## Initial Setup
 
@@ -9,7 +15,7 @@ this is done by setting up the `Configuration` component at the top of the app,
 making sure all the library components are children of it
 
 ```tsx
-import { Configuration, Pallete } from 'activate-components';
+import { Configuration, Pallete } from '@devland-ui/components';
 
 const palette: Pallete = {
   BRAND: '#a32c87',
@@ -55,7 +61,7 @@ must be present in the tree, preferably at the top
 
 ```tsx
 // keeping up with the previous example
-import { Configuration, Pallete, NotificationCenter } from 'activate-components';
+import { Configuration, Pallete, NotificationCenter } from '@devland-ui/components';
 
 const palette: Pallete = {
   BRAND: '#a32c87',
@@ -77,7 +83,7 @@ const App = ({ children }) => {
 
 The `Title`, `Text`, `Paragraph` and `Button` components do not define a `font-family`,
 so you can define it in a global style file, this allows for more customization
-when deciding over your typography, in our case we are doing it like
+when deciding over your typography, it would look something like
 
 ```scss
 @font-face {
