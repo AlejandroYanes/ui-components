@@ -40,7 +40,7 @@ const Input: FunctionComponent<InputProps> = (props) => {
         data-el="input"
         value={value}
         error={!!error}
-        padLeft={!!icon && icon !== 'null'}
+        padLeft={!!icon}
         padRight={showClear}
         placeholder={placeholder}
         onChange={handleOnChange}
@@ -51,6 +51,7 @@ const Input: FunctionComponent<InputProps> = (props) => {
       />
       <ClearButton
         topSpaced={!!label}
+        disabled={disabled}
         showClear={showClear && !!value}
         onClick={onChange}
       />

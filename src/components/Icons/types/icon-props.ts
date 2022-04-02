@@ -3,7 +3,7 @@ import { Colors } from 'styles/colors';
 
 export interface IconProps {
   id?: string;
-  color?: Colors;
+  color?: Colors | 'currentcolor';
   height?: number | string;
   width?: number | string;
   className?: string;

@@ -6,13 +6,14 @@ import { CloseIcon } from '../../Icons';
 interface Props {
   showClear?: boolean;
   topSpaced?: boolean;
+  disabled?: boolean;
   returnValue?: any;
   onClick: (event) => void;
   style?: any;
 }
 
 const ClearButton: FunctionComponent<Props> = (props) => {
-  const { topSpaced, showClear, returnValue, onClick, style } = props;
+  const { topSpaced, showClear, disabled, returnValue, onClick, style } = props;
 
   if (showClear) {
     const clearInput = (event) => {
@@ -23,6 +24,7 @@ const ClearButton: FunctionComponent<Props> = (props) => {
     return (
       <AbsoluteContent style={style} topSpaced={topSpaced} floatRight>
         <IconButton
+          disabled={disabled}
           onClick={clearInput}
           icon={<CloseIcon height={16} width={16} />}
           color="font"

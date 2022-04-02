@@ -8,11 +8,11 @@ import { IconBox } from './styled/right-node';
 import { SelectOption } from './';
 
 interface Props {
-  isLoading: boolean;
-  isHovered: boolean;
-  isOpen: boolean;
-  showClear: boolean;
-  multiple: boolean;
+  isLoading?: boolean;
+  isHovered?: boolean;
+  isOpen?: boolean;
+  showClear?: boolean;
+  multiple?: boolean;
   disabled?: boolean;
   value: SelectOption | SelectOption[];
   onChange: (event) => void;
@@ -65,6 +65,7 @@ const RightNode: FunctionComponent<Props> = (props) => {
     return (
       <ClearButton
         returnValue={multiple ? [] : undefined}
+        disabled={disabled}
         onClick={onChange}
         showClear
       />
