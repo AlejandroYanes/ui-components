@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Variations } from 'styles/colors';
-import { anyPropsAttrs, getColorVariation, getGrayColor } from 'helpers';
+import { anyPropsAttrs, getColorVariation, getGreyColor } from 'helpers';
 
 const dotSize = '8px';
 
@@ -22,7 +22,7 @@ export const Dot = styled.li.attrs(anyPropsAttrs)`
   height: ${dotSize};
   border-radius: 50px;
   margin-right: 12px;
-  background-color: ${getGrayColor};
+  background-color: ${getGreyColor};
   transition: all 150ms linear;
   ${getActiveDotStyle};
 

@@ -3,7 +3,7 @@ import { ZLevels } from 'styles/z-levels';
 import {
   anyPropsAttrs,
   getBgdColor,
-  getGrayColor,
+  getGreyColor,
 } from 'helpers';
 
 const getFloatingStyles = (props) => {
@@ -27,7 +27,7 @@ export const StyledOptionsTray = styled.div.attrs(anyPropsAttrs)`
   flex-direction: column;
   z-index: ${ZLevels.componentLevel2};
   background-color: ${getBgdColor};
-  border: 1px solid ${getGrayColor};
+  border: 1px solid ${getGreyColor};
 `;
 
 export const Edge = styled.div`

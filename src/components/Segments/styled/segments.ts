@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   getBgdColor,
-  getGrayColor,
+  getGreyColor,
   getPositionStyles,
 } from 'helpers';
 
@@ -12,6 +12,6 @@ export const Segments = styled.ul`
   border-radius: 20px;
   transition: all 150ms linear;
   background-color: ${getBgdColor};
-  border: 1px solid ${getGrayColor};
+  border: 1px solid ${getGreyColor};
   ${getPositionStyles};
 `;
