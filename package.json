@@ -12,10 +12,10 @@
   "homepage": "https://heuristic-bassi-8fff38.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlejandroYanes/activate-components.git"
+    "url": "git+https://github.com/devland-cuba/ui-components.git"
   },
   "bugs": {
-    "url": "https://github.com/AlejandroYanes/activate-components/issues"
+    "url": "https://github.com/devland-cuba/ui-components/issues"
   },
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
