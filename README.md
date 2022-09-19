@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/efc33d9d-9c30-4422-bf74-8d2a74f00cab/deploy-status)](https://app.netlify.com/sites/devland-ui/deploys)
+
+
 # DevLand UI components
 A set of components crafted form scratch to be used in DevLand projects
 
